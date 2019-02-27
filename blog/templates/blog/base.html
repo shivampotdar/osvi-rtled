@@ -5,9 +5,13 @@
      <title>Django Girls blog</title>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">     
      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
      <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body id="index" class="home">
@@ -19,8 +23,7 @@
                <li><a href="/cpp">C++ Code</a></li>
                <li><a href="/py">Python Code</a></li>
           </ul>
-          {{ target }}
-          {{ resrun }}
+         
      </div>
      <div id="content">
           <!-- ************  CODING ZONE  ************ -->
@@ -44,6 +47,9 @@
                {% block run %}
                {% endblock %}
           </div>
+          <!-- <div id="live_feed">
+               <img style="-webkit-user-select: none;" src="http://localhost:8081/">
+          </div> -->
 
           <!-- ************ COMPILATION RESULTS ZONE ************ -->
 
@@ -78,7 +84,7 @@
                editorElement.innerHTML = editor.getValue();
           });
      </script>
-     </div>
+</div>
 </body>
 
 </html>
