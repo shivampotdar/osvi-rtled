@@ -39,7 +39,17 @@ li {
     min-width: 400px;
     right: 10px;
     top: 5px;
-    width: 48%;
+    width: 30%;
+}
+
+#live_feed {
+    position: absolute;
+    height: 60%;
+    min-height: 350px;
+    min-width: 400px;
+    right: 10px;
+    top: 5px;
+    width: 25%;
 }
 
 #compile {
