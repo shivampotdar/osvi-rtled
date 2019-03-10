@@ -144,7 +144,7 @@ class RunPyCode(object):
                 break
         f1.close()
         f2.close()
-        if flag == 1:
+        if flag != 5 :
             self._run_py_prog(filename)
         else:
             self.stdout='Please check your code'
