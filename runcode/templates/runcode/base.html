@@ -56,7 +56,7 @@
 			<div class="col l6 s6 m6">
 				<div id="compile">
 					<div id="title-compile" class="head-section">
-						Compilation / Output
+                        <h4>Compilation / Output</h4>
 					</div>
 					{% block comp %}
 					{% endblock %}
@@ -66,11 +66,13 @@
 			<div class="col l6 s6 m6">
 				<div id="live_feed">
 					<div id="title-feed" class="head-section">
-                         Live Feed
+                        <h4>Live Feed</h4>
 					</div>
 					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
-					<img style="-webkit-user-select: none;" src="http://172.20.10.2:8081/">
-                    <a class="btn btn-primary" href="{% url 'code_home'%}">Button-Text</a>
+                    <iframe width=640 height=480 src="http://localhost:8081"></iframe><br>
+
+                    <a class="btn btn-primary" href="{% url 'start_vid'%}">Start Video Stream</a>
+                    <a class="btn btn-primary" href="{% url 'stop_vid'%}">Stop Video Stream</a>
 				</div>
 			</div>
 		</div>

@@ -1,16 +1,12 @@
 from django.shortcuts import render
-from django.utils import timezone
-from django.shortcuts import render
 from django.shortcuts import redirect
-from .runcode import runcode
-from .models import Ccode
+import runcode.execcode as exec
 from django.contrib.auth.decorators import login_required
-
-default_py_code = """import sys
 import os
+from time import sleep
 
-if __name__ == "__main__":
-    print("Hello Python World!!")
+default_py_code = """
+print("Hello Python World!!")
 """
 
 default_rows = "7"
@@ -20,7 +16,7 @@ def py(request):
     if request.method == 'POST':
         code = request.POST.get('code')
         print(code)
-        run = runcode.RunPyCode(code)
+        run = exec.RunPyCode(code)
         rescompil, resrun = run.run_py_code()
         if not resrun:
             resrun = 'No result!'
@@ -29,3 +25,16 @@ def py(request):
         resrun = 'No result!'
         rescompil = ''
     return render(request, 'runcode/post_list.html',{'code':code,'target':"runpy",'resrun':resrun,'rescomp':rescompil,'rows':default_rows, 'cols':default_cols})
+
+
+def start_vid(void):
+    cmd = " echo samsanjana12 | sudo -S motion -b"
+    os.system(cmd)
+    sleep(1.5)          # don't have any other option as of now to wait for iframe loading
+    return redirect('code_home')
+
+
+def stop_vid(void):
+    cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
+    os.system(cmd)
+    return redirect('code_home')
