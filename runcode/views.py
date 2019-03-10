@@ -11,7 +11,11 @@ print("Hello Python World!!")
 
 default_rows = "7"
 default_cols = "70"
+
+
 @login_required
+
+
 def py(request):
     if request.method == 'POST':
         code = request.POST.get('code')
@@ -24,7 +28,8 @@ def py(request):
         code = default_py_code
         resrun = 'No result!'
         rescompil = ''
-    return render(request, 'runcode/post_list.html',{'code':code,'target':"runpy",'resrun':resrun,'rescomp':rescompil,'rows':default_rows, 'cols':default_cols})
+    return render(request, 'runcode/post_list.html', {'code': code,'target': "runpy",'resrun': resrun,'rescomp': rescompil,
+                                                      'rows': default_rows, 'cols': default_cols})
 
 
 def start_vid(void):
