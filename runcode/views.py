@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from .runcode import runcode
 from .models import Ccode
+from django.contrib.auth.decorators import login_required
 
 default_py_code = """import sys
 import os
@@ -12,15 +13,9 @@ if __name__ == "__main__":
     print("Hello Python World!!")
 """
 
-default_rows = "15"
-default_cols = "60"
-
-# Create your views here.
-# def post_list(request):
-#     print('This is an info message')
-#     return render(request, 'runcode/post_list.html')
-
-
+default_rows = "7"
+default_cols = "70"
+@login_required
 def py(request):
     if request.method == 'POST':
         code = request.POST.get('code')

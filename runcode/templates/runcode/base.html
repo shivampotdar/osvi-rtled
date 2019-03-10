@@ -70,6 +70,7 @@
 					</div>
 					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
 					<img style="-webkit-user-select: none;" src="http://172.20.10.2:8081/">
+                    <a class="btn btn-primary" href="{% url 'code_home'%}">Button-Text</a>
 				</div>
 			</div>
 		</div>
@@ -80,7 +81,6 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 	<script src="{% static 'ace/ace.js' %}"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -128,16 +128,6 @@
 		$("#runpy").removeClass("blue-grey darken-3");
 	</script>
 	{% endif %}
-	{% if target == "runc" %}
-	<script type="text/javascript">
-		$("#runc").addClass("blue-grey darken-3");
-	</script>
-	{% else %}
-	<script type="text/javascript">
-		$("#runc").removeClass("blue-grey darken-3");
-	</script>
-	{% endif %}
 
-</div>
 </body>
 </html>
