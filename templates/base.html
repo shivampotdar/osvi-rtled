@@ -1,14 +1,92 @@
 <!-- templates/base.html -->
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
   <title>{% block title %}OSVI-RT LED{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+
+<body class="home">
+
+  <nav class="nav-extended" style="background-color:#263238  !important;">
+    <div class="nav-wrapper">
+      <a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"> Open Source Virtual
+        Instrumentation-Remote Trigger </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+    <div class="divider"></div>
+  </nav>
+
   <main>
-    {% block content %}
-    {% endblock %}
+
+    <div class="row container" style="margin-top:30px;">
+      <!-- ************  CODING ZONE  ************ -->
+      <div class="col s12 m12 center">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+
   </main>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+    M.textareaAutoResize($('#text-result'));
+    M.textareaAutoResize($('#text-code'));
+    M.textareaAutoResize($('#text-compile'));
+  </script>
+  <script>
+    // The Ace editor needs divs instead of textareas
+    // So we hide the textarea and show a div instead
+    var editorElement = document.getElementById("text-code");
+    editorElement.classList.add("hidden");
+    document.getElementById("text-code-ace").classList.remove("hidden");
+
+    // Set up the editor
+    var editor = ace.edit("text-code-ace");
+    editor.setTheme("ace/theme/tomorrow");
+    var language = ("{{ target }}" === "runpy") ? "python" : "c_cpp";
+    editor.getSession().setMode("ace/mode/" + language);
+    // Make sure we copy the content of the editor to the textarea before posting
+    // its content to the server
+    document.getElementById("launch-button").addEventListener("click", function () {
+      editorElement.innerHTML = editor.getValue();
+    });
+  </script>
+  <script type="text/javascript">
+    $(window).resize(function () {
+      if (window.innerWidth < 800) {
+        originalContent = $('#head_osvi').innerHTML;
+        $('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"> OSVI-RT </a>');
+
+      } else if (window.innerWidth > 800) {
+        $('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">   Open Source Virtual Instrumentation-Remote Trigger </a>');
+      }
+    }).resize();
+  </script>
+  {% if target == "runpy" %}
+  <script type="text/javascript">
+    $("#runpy").addClass("blue-grey darken-3");
+  </script>
+  {% else %}
+  <script type="text/javascript">
+    $("#runpy").removeClass("blue-grey darken-3");
+  </script>
+  {% endif %}
+
 </body>
+
 </html>
