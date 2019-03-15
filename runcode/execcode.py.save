@@ -1,0 +1,8 @@
+import subprocess
+import sys
+import os
+from fileinput import filename
+import mmap
+import RPi.GPIO as gp
+
+'''

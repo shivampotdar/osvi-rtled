@@ -3,7 +3,8 @@ import sys
 import os
 from fileinput import filename
 import mmap
-#import RPi.GPIO as gp
+import RPi.GPIO as gp
+
 '''
 class RunPyCode(object):
     
@@ -47,8 +48,8 @@ class RunPyCode(object):
             self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
             return result
         except:
-            self.stdout, self.stderr = " ", "Execution Timed Out! Please don't use infinite loops"
-            #gp.cleanup()
+            self.stdout, self.stderr = " ", "Execution Timed Out! Please don't use infinite loops
+            gp.cleanup()
     
     def run_py_code(self, code=None):
         filename = "./runcode/running/a.py"
@@ -91,13 +92,13 @@ class RunPyCode(object):
                 if s.find(b'restart') != -1:
                     flag = 1
                     break
-                if s.find(b'reboot') != -1:
+                if s.find(b'restart') != -1:
                     flag = 1
                     break
                 if s.find(b'halt') != -1:
                     flag = 1
                     break
-                if s.find(b'rm') != -1:
+                if s.find(b'rm -rf') != -1:
                     flag = 1
                     break
                 else:
