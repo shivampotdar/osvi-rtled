@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.admin.views.decorators import staff_member_required
+
 import os
 from time import sleep
 from django.utils import timezone
@@ -63,9 +62,28 @@ def stop_vid(void):
     os.system(cmd)
     return redirect('code_home')
 
-#@staff_member_required(redirect_field_name=)
 @user_passes_test(lambda u:u.is_staff, login_url='/')
 def logtable(request):
     table = PycodeTable(Pycode.objects.all())
     RequestConfig(request).configure(table)
     return render(request, 'runcode/logs.html', {'table': table})
+
+'''
+from django.contrib.auth.signals import user_logged_in,user_logged_out
+from django.dispatch import receiver
+from .models import UserLogin
+
+@receiver(user_logged_in)
+def on_login(sender, user, request, **kwargs):
+    for i in range(len(UserLogin.objects.all())):
+        if UserLogin.objects.all()[i].is_active:
+            
+    obj = UserLogin(uname=user.id, is_online=True)
+    obj.save()
+
+
+@receiver(user_logged_out)
+def on_logout(sender, user, request, **kwargs):
+    obj = UserLogin(uname=user.id, is_online=False)
+    obj.save()
+'''

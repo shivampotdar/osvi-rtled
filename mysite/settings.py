@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'runcode',
     'django_tables2',
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'accounts.middleware.OneSessionPerUserMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -130,11 +131,5 @@ LOGOUT_REDIRECT_URL = 'home'
 MEDIA_ROOT = os.path.join(BASE_DIR,'runcode/data/')
 MEDIA_URL = '/media/'
 
-MIDDLEWARE_CLASSES = [
-    # ...
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django_session_timeout.middleware.SessionTimeoutMiddleware',
-    # ...
-]
-
-SESSION_EXPIRE_SECONDS = 20  # 1 hour
+SESSION_COOKIE_AGE = 300 #logs out user after 5 minutes
+# django-session-security for logout when inactive

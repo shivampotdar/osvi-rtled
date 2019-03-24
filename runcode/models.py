@@ -1,7 +1,5 @@
 from django.conf import settings
 from django.db import models
-#from django.conf import settings
-from django.utils import timezone
 
 # Create your models here.
 
@@ -26,4 +24,8 @@ class Pycode(models.Model):
     result_output = models.TextField(default='No Output')
     result_error = models.TextField(default='No Error')
 
-    #submitted_by = models.ForeignKey(usermod.User, on_delete=models.CASCADE)
+'''
+class UserLogin(models.Model):
+    uname = models.IntegerField(primary_key=True, unique = True)
+    is_online = models.BooleanField(default=False)
+'''
