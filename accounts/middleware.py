@@ -1,6 +1,7 @@
 #Session model stores the session data
 from django.contrib.sessions.models import Session
 
+
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
     def __init__(self, get_response):

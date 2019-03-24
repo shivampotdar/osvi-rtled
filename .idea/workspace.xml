@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520831f2-30b9-47bf-a636-31983268d994" name="Default Changelist" comment="Added testing case (/running/answers.py)&#10;Little changes in frontend">
-      <change afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/918d5f6e-80a0-4b50-8def-2254d712047b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/918d5f6e-80a0-4b50-8def-2254d712047b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runcode/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runcode/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runcode/running/a.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/running/a.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runcode/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runcode/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" selection-end-line="30" />
+            <state relative-caret-position="465">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -200,10 +190,10 @@
         <option value="$PROJECT_DIR$/runcode/signals.py" />
         <option value="$PROJECT_DIR$/runcode/models.py" />
         <option value="$PROJECT_DIR$/runcode/apps.py" />
-        <option value="$PROJECT_DIR$/accounts/middleware.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/accounts/apps.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
+        <option value="$PROJECT_DIR$/accounts/middleware.py" />
       </list>
     </option>
   </component>
@@ -370,7 +360,7 @@
       <workItem from="1552476719215" duration="385000" />
       <workItem from="1553396394001" duration="16150000" />
       <workItem from="1553419325795" duration="1916000" />
-      <workItem from="1553440400250" duration="18343000" />
+      <workItem from="1553440400250" duration="19273000" />
     </task>
     <task id="LOCAL-00001" summary="Added testing case (/running/answers.py)&#10;Little changes in frontend">
       <created>1551768907613</created>
@@ -383,13 +373,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74162000" />
+    <option name="totallyTimeSpent" value="75092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30196938" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30196938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -403,7 +392,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3129103" side_tool="true" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.68708974" visible="true" weight="0.33004385" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.68708974" visible="true" weight="0.33004385" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32785088" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -740,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" selection-end-line="30" />
+        <state relative-caret-position="465">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
