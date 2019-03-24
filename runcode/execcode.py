@@ -3,6 +3,7 @@ import sys
 import os
 from fileinput import filename
 import mmap
+from .models import Pycode
 
 '''
 class RunPyCode(object):
@@ -87,16 +88,22 @@ class RunPyCode(object):
                 if s.find(b'shutdown') != -1:
                     flag = 1
                     break
-                if s.find(b'restart') != -1:
+                if s.find(b'ifconfig') != -1:
                     flag = 1
                     break
                 if s.find(b'restart') != -1:
+                    flag = 1
+                    break
+                if s.find(b'reboot') != -1:
                     flag = 1
                     break
                 if s.find(b'halt') != -1:
                     flag = 1
                     break
-                if s.find(b'rm -rf') != -1:
+                if s.find(b'rm') != -1:
+                    flag = 1
+                    break
+                if s.find(b'poweroff') != -1:
                     flag = 1
                     break
                 else:

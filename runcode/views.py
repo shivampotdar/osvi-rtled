@@ -1,9 +1,22 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-import runcode.execcode as exec
+from django.urls import reverse_lazy
+
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 import os
 from time import sleep
+from django.utils import timezone
+
+from .models import Pycode
+import runcode.execcode as exec
+from django.core.files.base import ContentFile
+
+from django_tables2 import RequestConfig
+from .tables import PycodeTable
+
+from django.contrib.auth.decorators import user_passes_test
+
 
 default_py_code = """
 print("Hello Python World!!")
@@ -14,8 +27,6 @@ default_cols = "70"
 
 
 @login_required
-
-
 def py(request):
     if request.method == 'POST':
         code = request.POST.get('code')
@@ -24,6 +35,12 @@ def py(request):
         rescompil, resrun = run.run_py_code()
         if not resrun:
             resrun = 'No result!'
+        var = Pycode(author = request.user, postdate= timezone.now(),result_error=rescompil,result_output=resrun)
+        fname = timezone.now().strftime('%d-%m-%y_%H:%M:%S')
+        filename = 'user_{0}/{1}'.format(request.user.id, fname)
+        filename = filename+'.py'
+        var.pycode.save(filename,ContentFile(code))
+
     else:
         code = default_py_code
         resrun = 'No result!'
@@ -32,6 +49,7 @@ def py(request):
                                                       'rows': default_rows, 'cols': default_cols})
 
 
+@login_required
 def start_vid(void):
     cmd = " echo samsanjana12 | sudo -S motion -b"
     os.system(cmd)
@@ -39,7 +57,15 @@ def start_vid(void):
     return redirect('code_home')
 
 
+@login_required
 def stop_vid(void):
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
     os.system(cmd)
     return redirect('code_home')
+
+#@staff_member_required(redirect_field_name=)
+@user_passes_test(lambda u:u.is_staff, login_url='/')
+def logtable(request):
+    table = PycodeTable(Pycode.objects.all())
+    RequestConfig(request).configure(table)
+    return render(request, 'runcode/logs.html', {'table': table})

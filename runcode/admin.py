@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ccode
+from .models import Pycode
 
 # Register your models here.
-admin.site.register(Ccode)
+admin.site.register(Pycode)
