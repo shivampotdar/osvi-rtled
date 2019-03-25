@@ -3,7 +3,12 @@ import sys
 import os
 from fileinput import filename
 import mmap
+<<<<<<< HEAD
 #import RPi.GPIO as gp
+=======
+from .models import Pycode
+
+>>>>>>> experimental
 '''
 class RunPyCode(object):
     
@@ -88,7 +93,10 @@ class RunPyCode(object):
                 if s.find(b'shutdown') != -1:
                     flag = 1
                     break
-                if s.find(b'restart') != -1:
+                if s.find(b'ifconfig') != -1:
+                    flag = 1
+                    break
+                if s.find(b'reboot') != -1:
                     flag = 1
                     break
                 if s.find(b'reboot') != -1:
@@ -98,6 +106,12 @@ class RunPyCode(object):
                     flag = 1
                     break
                 if s.find(b'rm') != -1:
+<<<<<<< HEAD
+=======
+                    flag = 1
+                    break
+                if s.find(b'poweroff') != -1:
+>>>>>>> experimental
                     flag = 1
                     break
                 else:
