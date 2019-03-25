@@ -58,7 +58,7 @@ def start_vid(request):
                 print(item)
             if i == 473:    # 473 - filename pattern
                 global f
-                f = request.user.username + '_' + timezone.now().strftime('%d-%m-%y_%H:%M:%S')
+                f = request.user.username + '-' + timezone.now().strftime('%d-%m-%y_%H-%M-%S')
                 # f_global = f
                 item = 'movie_filename '+f+'\n'
                 print(item)
@@ -75,12 +75,18 @@ def stop_vid(request):
     sleep(2)
     var = UserVids(author=request.user, postdate=timezone.now())
     fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
-    var.uservid.save(f + '.mp4', File(fopen))
+    print(f)
+    var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
+    os.remove(os.getcwd() + '/runcode/data/videos/' + filename_global + '/' + f + '.mp4')
     return redirect('code_home')
 
-@user_passes_test(lambda u:u.is_staff, login_url='/')
+# @user_passes_test(lambda u:u.is_staff, login_url='/')
 def logtable(request):
-    table = PycodeTable(Pycode.objects.all())
-    table2 = UserVidsTable(UserVids.objects.all())
+    if request.user.is_staff or request.user.is_superuser:
+        table = PycodeTable(Pycode.objects.all())
+        table2 = UserVidsTable(UserVids.objects.all())
+    else:
+        table = PycodeTable(Pycode.objects.filter(author = request.user.id))
+        table2 = UserVidsTable(UserVids.objects.filter(author = request.user.id))
     RequestConfig(request).configure(table)
     return render(request, 'runcode/logs.html', {'table': table,'table2': table2})

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="{% static 'css/runcode.css' %}">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
 
 	<nav class="nav-extended" style="background-color:#263238  !important;">
@@ -18,7 +19,7 @@
             <a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
+			        <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
 			</ul>
 		</div>
 		<div class="divider"></div>
@@ -27,8 +28,10 @@
 	    	<li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
 		    <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
 	</ul>
-	<main style="padding:15px;">
-		<div class="row">
+
+    <main style="padding:15px;">
+
+        <div class="row">
 			<!-- ************  CODING ZONE  ************ -->
 			<div class="col s12 m6">
 				<div id="code">
@@ -84,9 +87,6 @@
                                 <input type="submit" value="Stop" id="toggle2" />
                             </form>
                         </div>
-<!--						<a href="{% url 'start_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">play_arrow</i></a>
-						<a href="{% url 'stop_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">stop</i></a>
--->
 					</div><br>
 					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
                     <!--<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>-->
