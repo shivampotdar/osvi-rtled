@@ -67,23 +67,3 @@ def logtable(request):
     table = PycodeTable(Pycode.objects.all())
     RequestConfig(request).configure(table)
     return render(request, 'runcode/logs.html', {'table': table})
-
-'''
-from django.contrib.auth.signals import user_logged_in,user_logged_out
-from django.dispatch import receiver
-from .models import UserLogin
-
-@receiver(user_logged_in)
-def on_login(sender, user, request, **kwargs):
-    for i in range(len(UserLogin.objects.all())):
-        if UserLogin.objects.all()[i].is_active:
-            
-    obj = UserLogin(uname=user.id, is_online=True)
-    obj.save()
-
-
-@receiver(user_logged_out)
-def on_logout(sender, user, request, **kwargs):
-    obj = UserLogin(uname=user.id, is_online=False)
-    obj.save()
-'''
