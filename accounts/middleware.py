@@ -1,6 +1,7 @@
 #Session model stores the session data
 from django.contrib.sessions.models import Session
-
+from .models import LoggedInUser
+from django.core.exceptions import PermissionDenied
 
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
@@ -12,20 +13,19 @@ class OneSessionPerUserMiddleware:
         # the view (and later middleware) are called.
         if request.user.is_authenticated:
             stored_session_key = request.user.logged_in_user.session_key
-
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key
             # session_key with from the Session table
             if stored_session_key and stored_session_key != request.session.session_key:
                 Session.objects.get(session_key=stored_session_key).delete()
-
             request.user.logged_in_user.session_key = request.session.session_key
             request.user.logged_in_user.save()
-
         response = self.get_response(request)
-
+        if len(LoggedInUser.objects.all()) > 1:
+            raise PermissionDenied
+        return response
         # This is where you add any extra code to be executed for each request/response after
         # the view is called.
         # For this tutorial, we're not adding any code so we just return the response
 
-        return response
+
