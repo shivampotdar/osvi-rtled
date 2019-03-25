@@ -16,3 +16,8 @@ class Pycode(models.Model):
     pycode = models.FileField()
     result_output = models.TextField(default='No Output')
     result_error = models.TextField(default='No Error')
+
+class UserVids(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
+    postdate = models.DateTimeField('time saved')
+    uservid = models.FileField()

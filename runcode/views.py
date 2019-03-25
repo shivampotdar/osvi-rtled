@@ -7,15 +7,15 @@ import os
 from time import sleep
 from django.utils import timezone
 
-from .models import Pycode
+from .models import Pycode,UserVids
 import runcode.execcode as exec
 from django.core.files.base import ContentFile
 
 from django_tables2 import RequestConfig
-from .tables import PycodeTable
+from .tables import PycodeTable, UserVidsTable
 
 from django.contrib.auth.decorators import user_passes_test
-
+from django.core.files import File
 
 default_py_code = """
 print("Hello Python World!!")
@@ -24,19 +24,18 @@ print("Hello Python World!!")
 default_rows = "7"
 default_cols = "70"
 
-
 @login_required
 def py(request):
     if request.method == 'POST':
         code = request.POST.get('code')
-        print(code)
+        #print(code)
         run = exec.RunPyCode(code)
         rescompil, resrun = run.run_py_code()
         if not resrun:
             resrun = 'No result!'
         var = Pycode(author = request.user, postdate= timezone.now(),result_error=rescompil,result_output=resrun)
         fname = timezone.now().strftime('%d-%m-%y_%H:%M:%S')
-        filename = 'user_{0}/{1}'.format(request.user.id, fname)
+        filename = 'user_{0}_{1}/{2}'.format(request.user.id, request.user.username, fname)
         filename = filename+'.py'
         var.pycode.save(filename,ContentFile(code))
 
@@ -49,21 +48,39 @@ def py(request):
 
 
 @login_required
-def start_vid(void):
-    cmd = " echo samsanjana12 | sudo -S motion -b"
+def start_vid(request):
+    global filename_global
+    filename_global = 'user_{0}_{1}'.format(request.user.id, request.user.username)
+    with open(os.getcwd()+'/runcode/motion.conf') as fin, open(os.getcwd()+'/runcode/motion_new.conf','w') as fout:
+        for i, item in enumerate(fin,1):
+            if i == 450:    # 450 - dir for saving stuff
+                item = 'target_dir "'+os.getcwd()+'/runcode/data/videos/'+filename_global+'"\n'
+                print(item)
+            if i == 473:    # 473 - filename pattern
+                global f
+                f = request.user.username + '_' + timezone.now().strftime('%d-%m-%y_%H:%M:%S')
+                # f_global = f
+                item = 'movie_filename '+f+'\n'
+                print(item)
+            fout.write(item)
+    cmd = ' echo samsanjana12 | sudo -S motion -b -c "'+os.getcwd()+'/runcode/motion_new.conf"'
     os.system(cmd)
     sleep(1.5)          # don't have any other option as of now to wait for iframe loading
     return redirect('code_home')
 
-
 @login_required
-def stop_vid(void):
+def stop_vid(request):
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
     os.system(cmd)
+    sleep(2)
+    var = UserVids(author=request.user, postdate=timezone.now())
+    fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
+    var.uservid.save(f + '.mp4', File(fopen))
     return redirect('code_home')
 
 @user_passes_test(lambda u:u.is_staff, login_url='/')
 def logtable(request):
     table = PycodeTable(Pycode.objects.all())
+    table2 = UserVidsTable(UserVids.objects.all())
     RequestConfig(request).configure(table)
-    return render(request, 'runcode/logs.html', {'table': table})
+    return render(request, 'runcode/logs.html', {'table': table,'table2': table2})

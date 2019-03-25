@@ -72,11 +72,21 @@
 				<div id="live_feed">
 					<div id="title-feed" class="head-section" style="display:inline-flex;">
 
-						<h4>Live Feed</h4>
+						<h4>Live Feed</h4><br>
+                        <div>
+                            <form action= '{% url 'start_vid'%}' method="POST">{% csrf_token %}
+                                <input type="submit" value="Start" id="toggle1" />
+                            </form>
+                        </div>
 
-						<a href="{% url 'start_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">play_arrow</i></a>
+                        <div>
+                            <form action= '{% url 'stop_vid'%}' method="POST">{% csrf_token %}
+                                <input type="submit" value="Stop" id="toggle2" />
+                            </form>
+                        </div>
+<!--						<a href="{% url 'start_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">play_arrow</i></a>
 						<a href="{% url 'stop_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">stop</i></a>
-
+-->
 					</div><br>
 					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
                     <!--<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>-->
