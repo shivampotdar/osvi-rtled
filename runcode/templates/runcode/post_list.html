@@ -4,13 +4,13 @@
 <textarea id="text-code" name="code">
 {{ code }}
 </textarea>
-<div id="text-code-ace" class="hidden">{{ code }}</div>
+<div id="text-code-ace" class="hidden" style="height: 30%;">{{ code }}</div>
 {% endblock %}
 
 {% block run %}
-<textarea id="text-result" rows="7" cols="70" readonly>{{ resrun }}</textarea>
+<textarea id="text-result" rows="7" cols="70" style="height: 30%;" readonly>{{ resrun }}</textarea>
 {% endblock %}
 
 {% block comp %}
-<textarea id="text-compile" rows="7" cols="70" readonly>{{ rescomp }}</textarea>
+<textarea id="text-compile" rows="7" cols="70" style="height: 30%;" readonly>{{ rescomp }}</textarea>
 {% endblock %}

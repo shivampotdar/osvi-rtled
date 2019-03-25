@@ -12,21 +12,28 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body id="index" class="home">
+<body>
 
 	<nav class="nav-extended" style="background-color:#263238  !important;">
 		<div class="nav-wrapper">
-			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"> Open Source Virtual Instrumentation-Remote Trigger </a>
-			<a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
+			</ul>
 		</div>
 		<div class="divider"></div>
 	</nav>
+	<ul class="sidenav" id="mobile-demo">
+		<li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
+	</ul>
 
-	<main>
+	<main style="padding:15px;">
 
 		<div class="row">
 			<!-- ************  CODING ZONE  ************ -->
-			<div class="col l6 s6 m6">
+			<div class="col s12 m6">
 				<div id="code">
 					<form method="post">{% csrf_token %}
 						<div id="title-code" class="head-section">
@@ -40,7 +47,7 @@
 			</div>
 
 			<!-- ************ RUNNING ZONE RESULTS ************ -->
-			<div class="col l6 s6 m6">
+			<div class="col s12 m6">
 				<div id="result">
 					<div id="title-result" class="head-section">
 						<h4>Output result</h4>
@@ -49,30 +56,34 @@
 					{% endblock %}
 				</div>
 			</div>
-    	</div>
+		</div>
 
 		<!-- ************ COMPILATION RESULTS ZONE ************ -->
 		<div class="row">
-			<div class="col l6 s6 m6">
+			<div class="col s12 m6">
 				<div id="compile">
 					<div id="title-compile" class="head-section">
-                        <h4>Compilation / Output</h4>
+						<h4>Compilation</h4>
 					</div>
 					{% block comp %}
 					{% endblock %}
 				</div>
 			</div>
-		<!-- ************* WEBCAM IFRAME ************************** -->
-			<div class="col l6 s6 m6">
-				<div id="live_feed">
-					<div id="title-feed" class="head-section">
-                        <h4>Live Feed</h4>
-					</div>
-					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
-                    <iframe width=640 height=480 src="http://172.20.10.2:8081"></iframe><br>
 
-                    <a class="btn btn-primary" href="{% url 'start_vid'%}">Start Video Stream</a>
-                    <a class="btn btn-primary" href="{% url 'stop_vid'%}">Stop Video Stream</a>
+			<!-- ************* WEBCAM IFRAME ************************** -->
+			<div class="col s12 m6">
+				<div id="live_feed">
+					<div id="title-feed" class="head-section" style="display:inline-flex;">
+
+						<h4>Live Feed</h4>
+
+						<a href="{% url 'stop_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">play_arrow</i></a>
+						<a href="{% url 'start_vid'%}" style="margin-left: 20px;float: right;"><i class="material-icons" style="border:3px solid grey;background: #fff;color: #393030;border-radius: 50%;text-align: center;vertical-align: middle;padding:10px;">stop</i></a>
+
+					</div><br>
+					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
+					<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>
+
 				</div>
 			</div>
 		</div>
@@ -88,6 +99,11 @@
 		$(document).ready(function(){
 			$('.sidenav').sidenav();
 		});
+		document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems, options);
+		});
+
 		M.textareaAutoResize($('#text-result'));
 		M.textareaAutoResize($('#text-code'));
 		M.textareaAutoResize($('#text-compile'));

@@ -16,12 +16,19 @@
 
   <nav class="nav-extended" style="background-color:#263238  !important;">
     <div class="nav-wrapper">
-      <a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"> Open Source Virtual
-        Instrumentation-Remote Trigger </a>
+      <a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+      </ul>
     </div>
     <div class="divider"></div>
   </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Sign Up</a></li>
+  </ul>
 
   <main>
 
