@@ -72,7 +72,7 @@ def start_vid(request):
 def stop_vid(request):
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
     os.system(cmd)
-    sleep(2)
+    sleep(3)
     var = UserVids(author=request.user, postdate=timezone.now())
     fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
     print(f)

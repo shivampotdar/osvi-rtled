@@ -6,7 +6,6 @@ import os
 
 @receiver(user_logged_in)
 def on_user_logged_in(sender, request, **kwargs):
-    print("I'm here")
     LoggedInUser.objects.get_or_create(user=kwargs.get('user'))
 
 
