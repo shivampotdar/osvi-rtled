@@ -3,12 +3,8 @@ import sys
 import os
 from fileinput import filename
 import mmap
-<<<<<<< HEAD
-#import RPi.GPIO as gp
-=======
 from .models import Pycode
 
->>>>>>> experimental
 '''
 class RunPyCode(object):
     
@@ -106,17 +102,13 @@ class RunPyCode(object):
                     flag = 1
                     break
                 if s.find(b'rm') != -1:
-<<<<<<< HEAD
-=======
                     flag = 1
                     break
                 if s.find(b'poweroff') != -1:
->>>>>>> experimental
                     flag = 1
                     break
                 else:
                     break
-
         if flag != 0:
             self.stdout = ''
             self.stderr = 'Malicious Code!'

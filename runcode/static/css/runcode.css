@@ -12,24 +12,18 @@ li {
 }
 
 #code {
-    height: 60%;
-    min-height: 350px;
+
 }
 #result {
-    height: 60%;
-    min-height: 350px;
 
 }
 
 #live_feed {
-    height: 60%;
-    min-height: 350px;
+
 }
 
 #compile {
-    min-height: 100px;
-    /*width: 100%;*/
- 
+
 }
 
 #launch-button {

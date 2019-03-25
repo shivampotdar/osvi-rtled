@@ -16,12 +16,27 @@
 
   <nav class="nav-extended" style="background-color:#263238  !important;">
     <div class="nav-wrapper">
-      <a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"> Open Source Virtual
-        Instrumentation-Remote Trigger </a>
+      <a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {% if user.is_authenticated %}
+               <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
+        {% else %}
+               <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
+      </ul>
     </div>
     <div class="divider"></div>
   </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
+    {% if user.is_authenticated %}
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
+    {% else %}
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
+    {% endif %}
+  </ul>
 
   <main>
 
@@ -37,7 +52,7 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript">
