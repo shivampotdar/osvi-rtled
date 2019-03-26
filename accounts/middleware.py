@@ -2,6 +2,7 @@
 from django.contrib.sessions.models import Session
 from .models import LoggedInUser
 from django.core.exceptions import PermissionDenied
+from django.shortcuts import redirect
 
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
@@ -21,8 +22,9 @@ class OneSessionPerUserMiddleware:
             request.user.logged_in_user.session_key = request.session.session_key
             request.user.logged_in_user.save()
         response = self.get_response(request)
+        print(LoggedInUser.objects.count())
         if len(LoggedInUser.objects.all()) > 1:
-            raise PermissionDenied
+            return redirect('/accounts/logout/')
         return response
         # This is where you add any extra code to be executed for each request/response after
         # the view is called.

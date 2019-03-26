@@ -1,0 +1,11 @@
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Single_User{% endblock %}
+
+{% block content %}
+  <h2>Other Users are logged in, please wait for few minutes are retry</h2>
+  <div class="card" style="padding: 20px;">
+  <a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a>
+  </div>
+{% endblock %}
