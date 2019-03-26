@@ -33,7 +33,7 @@ def py(request):
         rescompil, resrun = run.run_py_code()
         if not resrun:
             resrun = 'No result!'
-        var = Pycode(author = request.user, postdate= timezone.now(),result_error=rescompil,result_output=resrun)
+        var = Pycode(author = request.user, postdate= timezone.now(),result_error=rescompil,result_output=resrun, session=request.user.logged_in_user.session_key)
         fname = timezone.now().strftime('%d-%m-%y_%H:%M:%S')
         filename = 'user_{0}_{1}/{2}'.format(request.user.id, request.user.username, fname)
         filename = filename+'.py'
@@ -72,8 +72,8 @@ def start_vid(request):
 def stop_vid(request):
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
     os.system(cmd)
-    sleep(3)
-    var = UserVids(author=request.user, postdate=timezone.now())
+    sleep(5)
+    var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
     fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
     print(f)
     var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
@@ -85,6 +85,7 @@ def logtable(request):
     if request.user.is_staff or request.user.is_superuser:
         table = PycodeTable(Pycode.objects.all())
         table2 = UserVidsTable(UserVids.objects.all())
+        #table3 =
     else:
         table = PycodeTable(Pycode.objects.filter(author = request.user.id))
         table2 = UserVidsTable(UserVids.objects.filter(author = request.user.id))
