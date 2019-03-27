@@ -21,6 +21,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         {% if user.is_authenticated %}
                <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
+               <li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
         {% else %}
                <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
                <li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
@@ -53,33 +54,12 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
       $('.sidenav').sidenav();
-    });
-    M.textareaAutoResize($('#text-result'));
-    M.textareaAutoResize($('#text-code'));
-    M.textareaAutoResize($('#text-compile'));
-  </script>
-  <script>
-    // The Ace editor needs divs instead of textareas
-    // So we hide the textarea and show a div instead
-    var editorElement = document.getElementById("text-code");
-    editorElement.classList.add("hidden");
-    document.getElementById("text-code-ace").classList.remove("hidden");
-
-    // Set up the editor
-    var editor = ace.edit("text-code-ace");
-    editor.setTheme("ace/theme/tomorrow");
-    var language = ("{{ target }}" === "runpy") ? "python" : "c_cpp";
-    editor.getSession().setMode("ace/mode/" + language);
-    // Make sure we copy the content of the editor to the textarea before posting
-    // its content to the server
-    document.getElementById("launch-button").addEventListener("click", function () {
-      editorElement.innerHTML = editor.getValue();
     });
   </script>
   <script type="text/javascript">
@@ -93,16 +73,9 @@
       }
     }).resize();
   </script>
-  {% if target == "runpy" %}
-  <script type="text/javascript">
-    $("#runpy").addClass("blue-grey darken-3");
+  <script>
+		$(document).ready(function(){
+			$('.sidenav').sidenav();
+		});
   </script>
-  {% else %}
-  <script type="text/javascript">
-    $("#runpy").removeClass("blue-grey darken-3");
-  </script>
-  {% endif %}
-
-</body>
-
 </html>

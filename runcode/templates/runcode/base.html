@@ -24,10 +24,16 @@
 		</div>
 		<div class="divider"></div>
 	</nav>
-    <ul class="sidenav" id="mobile-demo">
-	    	<li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
-		    <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
-	</ul>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
+    {% if user.is_authenticated %}
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
+    {% else %}
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+    <li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
+    {% endif %}
+  </ul>
 
     <main style="padding:15px;">
 
@@ -77,20 +83,20 @@
 
 						<h4>Live Feed</h4><br>
                         <div>
-                            <form action= '{% url 'start_vid'%}' method="POST">{% csrf_token %}
+                            <form action= '{% url 'start_vid'%}' method="POST" id="start_vid">{% csrf_token %}
                                 <input type="submit" value="Start" id="toggle1" />
                             </form>
                         </div>
 
                         <div>
-                            <form action= '{% url 'stop_vid'%}' method="POST">{% csrf_token %}
+                            <form action= ' {% url 'stop_vid'%}' method="POST" id="stop_vid">{% csrf_token %}
                                 <input type="submit" value="Stop" id="toggle2" />
                             </form>
                         </div>
 					</div><br>
 					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
                     <!--<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>-->
-                    <iframe src="http://127.0.0.1:8081" style="height: 30%;width: 100%;"></iframe><br>
+                    <img src="http://localhost:8081" style="height: 30%;width: 100%;" id="iframe1"></img><br>
                 </div>
 			</div>
 		</div>
@@ -98,24 +104,17 @@
 
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{% static 'ace/ace.js' %}"></script>
-	<script type="text/javascript">
+  <script>
 		$(document).ready(function(){
 			$('.sidenav').sidenav();
 		});
-		document.addEventListener('DOMContentLoaded', function() {
-			var elems = document.querySelectorAll('.sidenav');
-			var instances = M.Sidenav.init(elems, options);
-		});
-
-		M.textareaAutoResize($('#text-result'));
-		M.textareaAutoResize($('#text-code'));
-		M.textareaAutoResize($('#text-compile'));
-	</script>
-	<script>
+  </script>
+    <script>
 		// The Ace editor needs divs instead of textareas
 		// So we hide the textarea and show a div instead
 		var editorElement = document.getElementById("text-code");
@@ -153,6 +152,18 @@
 		$("#runpy").removeClass("blue-grey darken-3");
 	</script>
 	{% endif %}
+  <script>
+      $(window).on('unload', function() {
+	// You can send an ArrayBufferView, Blob, DOMString or FormData
+	// Since Content-Type of FormData is multipart/form-data, the Content-Type of the HTTP request will also be multipart/form-data
+
+	    var URL = "http://localhost:8000/runcode/stop_vid"
+        //var data = $("stop_vid")
+    	navigator.sendBeacon(URL)
+});
+  </script>
+
+<script src="../../static/main.js"></script>
 
 </body>
 
