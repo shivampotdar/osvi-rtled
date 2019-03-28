@@ -49,7 +49,10 @@ def py(request):
     return render(request, 'runcode/post_list.html', {'code': code,'target': "runpy",'resrun': resrun,'rescomp': rescompil,
                                                       'rows': default_rows, 'cols': default_cols})
 
+global a
+a=0
 
+@csrf_exempt
 @login_required
 def start_vid(request):
     global filename_global
@@ -68,35 +71,28 @@ def start_vid(request):
             fout.write(item)
     cmd = ' echo samsanjana12 | sudo -S motion -b -c "'+os.getcwd()+'/runcode/motion_new.conf"'
     os.system(cmd)
-    global a
     a=1
     sleep(1.5)          # don't have any other option as of now to wait for iframe loading
-    #return redirect('code_home')
     return HttpResponseRedirect('/')
 
-
-@login_required
 @csrf_exempt
+@login_required
 def stop_vid(request):
-    if a==1:
-        cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
-        os.system(cmd)
-        print('stop_vid')
-        return HttpResponseRedirect('/')
-    else:
+    if a == 1:
         cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
         os.system(cmd)
         sleep(5)
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
         fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
-        print(f)
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
         os.remove(os.getcwd() + '/runcode/data/videos/' + filename_global + '/' + f + '.mp4')
         return HttpResponseRedirect('/')
+    else:
+        cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
+        os.system(cmd)
+        return HttpResponseRedirect('/')
 
 
-
-# @user_passes_test(lambda u:u.is_staff, login_url='/')
 def logtable(request):
     if request.user.is_staff or request.user.is_superuser:
         table = PycodeTable(Pycode.objects.all())

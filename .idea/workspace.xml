@@ -2,15 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520831f2-30b9-47bf-a636-31983268d994" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runcode/static/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/osvi-rtled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/osvi-rtled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_041420.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_041427.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_041521.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_041915.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_041918.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_041959.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_042001.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_042010.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_042031.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_043803.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_043835.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_043849.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_043859.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_044819.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_045443.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_045504.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_045508.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_045510.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_045753.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_050936.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_050940.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051018.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051100.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051103.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051133.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051135.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051339.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051341.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051344.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051421.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051425.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051553.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051834.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051842.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_051940.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_052246.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_052327.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/user_1_shivam/28-03-19_052336.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-56-04.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_04-08-23.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_04-09-21.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_04-14-04.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_04-14-17.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_04-48-26.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_05-14-23.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_05-15-48.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_05-18-39.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-26-03-19_23-36-19_ONas2Rj.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-26-03-19_23-36-39_jOArYzo.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-15-02.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-16-45.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-17-24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-20-44.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-26-33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-27-27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-31-54.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-32-46.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-33-20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-33-49.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-34-24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-35-19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-35-55.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-37-22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-47-36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-28-03-19_03-48-55.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runcode/motion_new.conf" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/motion_new.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/static/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runcode/templates/runcode/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/templates/runcode/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runcode/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,20 +132,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="98" column="30" lean-forward="true" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+            <state relative-caret-position="321">
+              <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#iframe#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -93,10 +146,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/post_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcode/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+            <state relative-caret-position="-611">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -104,11 +166,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runcode/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcode/static/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="229">
+              <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -126,11 +212,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>code</find>
-      <find>template</find>
-      <find>models</find>
-      <find>auth</find>
-      <find>field</find>
       <find>middle</find>
       <find>time</find>
       <find>login</find>
@@ -156,6 +237,11 @@
       <find>nav-mobi</find>
       <find>.sidenav</find>
       <find>sidenav</find>
+      <find>form</find>
+      <find>runcode</find>
+      <find>load</find>
+      <find>code</find>
+      <find>code_hom</find>
     </findStrings>
     <replaceStrings>
       <replace>runcode</replace>
@@ -219,8 +305,8 @@
         <option value="$PROJECT_DIR$/runcode/templates/runcode/main.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/runcode/views.py" />
-        <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
         <option value="$PROJECT_DIR$/runcode/static/main.js" />
+        <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
       </list>
     </option>
   </component>
@@ -285,13 +371,6 @@
               <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
               <item name="runcode" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
@@ -435,7 +514,7 @@
       <workItem from="1553461860835" duration="1295000" />
       <workItem from="1553505669377" duration="38982000" />
       <workItem from="1553620061288" duration="7582000" />
-      <workItem from="1553688093469" duration="9157000" />
+      <workItem from="1553688093469" duration="15828000" />
     </task>
     <task id="LOCAL-00001" summary="Added testing case (/running/answers.py)&#10;Little changes in frontend">
       <created>1551768907613</created>
@@ -448,13 +527,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132108000" />
+    <option name="totallyTimeSpent" value="138779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28118163" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28118163" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -468,7 +546,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3129103" side_tool="true" weight="0.32894737" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.68708974" visible="true" weight="0.34539473" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.68708974" visible="true" weight="0.34539473" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3267544" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -564,16 +642,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/runcode/fout.txt" />
     <entry file="file://$PROJECT_DIR$/runcode/videosave.py" />
-    <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runcode/tables.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -749,27 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/post_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/logs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,6 +855,23 @@
     <entry file="file://$PROJECT_DIR$/runcode/data/user_1_shivam/27-03-19_170446.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/post_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -813,29 +881,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/runcode/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+        <state relative-caret-position="-611">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
+    <entry file="file://$PROJECT_DIR$/runcode/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="98" column="30" lean-forward="true" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+        <state relative-caret-position="135">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runcode/static/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        <state relative-caret-position="229">
+          <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

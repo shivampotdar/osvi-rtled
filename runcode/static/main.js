@@ -79,15 +79,13 @@ function start_vid() {
         type: "POST",
         }
     ).delay
-  // $('img').attr('src', $('img').attr('src')+'?'+'1');
-   //$('img').attr('src', $('img').attr('src')-'?'-'1');
     sleep(1500);
     $('#iframe1').attr( 'src', function ( i, val ) { return val; });
 };
 
 $('#stop_vid').on('submit', function(event){
     event.preventDefault();
-    console.log("form submitted!")  // sanity check
+    console.log("form submitted!")   // sanity check
     stop_vid();
 });
 
@@ -101,4 +99,33 @@ function stop_vid() {
     )
     sleep(1500);
     $('#iframe1').attr( 'src', function ( i, val ) { return val; });
+    document.location.reload(1)
 };
+
+
+$('#runcode').click(function(){
+    console.log("Hello");
+    start_vid();
+});
+/*
+$('#runcode').on('submit', function(event){
+    event.preventDefault();
+    console.log("form submitted!")  // sanity check
+    var a = "{{ code }}";
+    console.log(a)
+//    runcode();
+});
+
+function runcode() {
+    console.log("create post is working!") // sanity check
+    var a = '{{code}}'
+    console.log(a)
+    $.ajax({
+        url: "",
+        type: "POST",
+        data: {code : $('#runcode').val()}
+        },
+    );
+
+};
+*/
