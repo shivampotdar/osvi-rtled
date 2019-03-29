@@ -96,10 +96,12 @@ def stop_vid(request):
 def logtable(request):
     if request.user.is_staff or request.user.is_superuser:
         table = PycodeTable(Pycode.objects.all())
+        user_data =  Pycode.objects.all()
+        user_videos = UserVids.objects.all()
         table2 = UserVidsTable(UserVids.objects.all())
         #table3 =
     else:
         table = PycodeTable(Pycode.objects.filter(author = request.user.id))
         table2 = UserVidsTable(UserVids.objects.filter(author = request.user.id))
     RequestConfig(request).configure(table)
-    return render(request, 'runcode/logs.html', {'table': table,'table2': table2})
+    return render(request, 'runcode/logs.html', { 'table': table,'table2': table2, 'user_data' : user_data, 'user_videos' : user_videos })
