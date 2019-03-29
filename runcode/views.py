@@ -20,6 +20,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from django.http import HttpResponseRedirect
 
+
 default_py_code = """
 print("Hello Python World!!")
 """
@@ -49,7 +50,6 @@ def py(request):
     return render(request, 'runcode/post_list.html', {'code': code,'target': "runpy",'resrun': resrun,'rescomp': rescompil,
                                                       'rows': default_rows, 'cols': default_cols})
 
-global a
 a=0
 
 @csrf_exempt
@@ -71,26 +71,29 @@ def start_vid(request):
             fout.write(item)
     cmd = ' echo samsanjana12 | sudo -S motion -b -c "'+os.getcwd()+'/runcode/motion_new.conf"'
     os.system(cmd)
-    a=1
+    global a	
+    a = 1
+    request.session['started']=1
     sleep(1.5)          # don't have any other option as of now to wait for iframe loading
-    return HttpResponseRedirect('/')
+    return redirect('code_home')
 
 @csrf_exempt
 @login_required
 def stop_vid(request):
+    print(a)	
     if a == 1:
         cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
         os.system(cmd)
         sleep(5)
-        var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
+        var = UserVids(author=request.user, 	postdate=timezone.now(),session=request.user.logged_in_user.session_key)
         fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
         os.remove(os.getcwd() + '/runcode/data/videos/' + filename_global + '/' + f + '.mp4')
-        return HttpResponseRedirect('/')
+        return redirect('code_home')
     else:
         cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
         os.system(cmd)
-        return HttpResponseRedirect('/')
+        return redirect('code_home')
 
 
 def logtable(request):
