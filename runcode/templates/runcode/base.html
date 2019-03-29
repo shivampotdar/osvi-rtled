@@ -77,27 +77,23 @@
 			</div>
 
 		<!-- ************* WEBCAM IFRAME ************************** -->
-			<div class="col s12 m6">
-				<div id="live_feed">
-					<div id="title-feed" class="head-section" style="display:inline-flex;">
-
-						<h4>Live Feed</h4>
-                        <div>
-                            <form action= '{% url 'start_vid'%}' method="POST" id="start_vid">{% csrf_token %}
-                                <input type="submit" value="Start" class="head-section btn" id="toggle1" />
-                            </form>
-                        </div>
-                        <h4>     </h4>
-                        <div>
-                            <form action= ' {% url 'stop_vid'%}' method="POST" id="stop_vid">{% csrf_token %}
-                                <input type="submit" value="Stop" class="head-section btn" id="toggle2" />
-                            </form>
-                        </div>
-					</div><br>
-					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
-                    <!--<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>-->
-                    <img src="http://localhost:8081" style="height: 30%;width: 100%;" id="iframe1"></img><br>
-                </div>
+		<div class="col s12 m6">
+				<div id="title-feed" class="row" style="display: block;">
+					<div class="col s12 m8" style="font-size:35px;">Live Feed</div>
+					<div class="col s12 m2">
+						<form action="{% url 'start_vid'%}" method="POST" id="start_vid">{% csrf_token %}
+							<input type="submit" value="Start" class="head-section btn" id="toggle1" />
+						</form>
+					</div>
+					<div class="col s12 m2">
+						<form action="{% url 'stop_vid'%}" method="POST" id="stop_vid">{% csrf_token %}
+							<input type="submit" value="Stop" class="head-section btn" id="toggle2" />
+						</form>
+					</div>
+				</div>
+				<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
+				<!--<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>-->
+				<img src="http://localhost:8081" style="height: 30%;width: 100%;" id="iframe1">
 			</div>
 		</div>
 	</main>
