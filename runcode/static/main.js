@@ -107,7 +107,8 @@ $('#runcode').click(function(){
     console.log("Hello");
     start_vid();
 });
-
+*/
+/*
 $('#runcode').on('submit', function(event){
     event.preventDefault();
     console.log("form submitted!")  // sanity check
@@ -115,7 +116,8 @@ $('#runcode').on('submit', function(event){
     console.log(a)
 //    runcode();
 });
-
+*/
+/*
 function runcode() {
     console.log("create post is working!") // sanity check
     var a = '{{code}}'
