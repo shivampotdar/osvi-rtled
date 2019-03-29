@@ -103,12 +103,6 @@ function stop_vid() {
 };
 
 /*
-$('#runcode').click(function(){
-    console.log("Hello");
-    start_vid();
-});
-*/
-/*
 $('#runcode').on('submit', function(event){
     event.preventDefault();
     console.log("form submitted!")  // sanity check
