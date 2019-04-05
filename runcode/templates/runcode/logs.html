@@ -21,8 +21,8 @@
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				{% if user.is_authenticated %}
-				<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
 				<li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
+				<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
 				{% else %}
 				<li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
 				<li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
@@ -43,32 +43,55 @@
 
 	<main>
 
-		<div class="row container" style="margin-top:30px;">
+		<div class="row" style="margin-top:30px;">
 			<!-- ************  CODING ZONE  ************ -->
 			<div class="col s12 center">
-				<table>
+				<table class="responsive">
 					<tr>
-						<th>ID</th>
-						<th>Author</th>
-						<th>Time Saved</th>
-						<th>Pycode</th>
-						<th>Result Output</th>
-						<th>Session</th>
+						<th>Session ID</th>
+						<th>Logs</th>
 						<th>Videos</th>
 					</tr>
-					{% for logs in user_data %}
+					{% for u_id in unique_sessions %}
 					<tr>
-						<td>{{logs.id}}</td>
-						<td>{{logs.author}}</td>
-						<td>{{logs.postdate}}</td>
-						<td>{{logs.pycode}}</td>
-						<td>{{logs.result_output}}</td>
-						<td>{{logs.session}}</td>
-						{% for vid in user_videos %}
-						{% if vid.session == logs.session %}
-						<td>{{vid.uservid}}</td>
-						{% endif %}
-						{% endfor %}
+						<td>{{u_id}}</td>
+						<td style="vertical-align: top;">
+							<table class="responsive">
+								<tr>
+									<th>Author</th>
+									<th>Time Saved</th>
+									<th>Pycode</th>
+								</tr>
+								{% for logs in user_data %}
+								{% if logs.session == u_id %}
+								<tr>
+									<td>{{logs.author}}</td>
+									<td>{{logs.postdate}}</td>
+								
+									<td><a href="/media/{{logs.pycode}}">{{logs.pycode}}</a></td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</td>
+						<td style="vertical-align: top;">
+							<table class="responsive">
+								<tr>
+									<th>Author</th>
+									<th>Post Date</th>
+									<th>Video</th>
+							    </tr>
+								{% for log in user_videos %}
+								{% if log.session == u_id %}
+								<tr>
+									<td>{{log.author}}</td>
+									<td>{{log.postdate}}</td>
+									<td><a href="/media/videos/{{log.uservid}}">{{log.uservid}}</a></td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</td>
 					</tr>
 					{% endfor %}
 				</table>
