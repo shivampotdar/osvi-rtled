@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520831f2-30b9-47bf-a636-31983268d994" name="Default Changelist" comment="" />
+    <list default="true" id="520831f2-30b9-47bf-a636-31983268d994" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/runcode/data/videos/user_1_shivam/shivam-05-04-19_15-14-12.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/execcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/execcode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/motion.conf" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/motion.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/motion_new.conf" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/motion_new.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/running/a.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/running/a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/templates/runcode/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/templates/runcode/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/templates/runcode/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/templates/runcode/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,33 +72,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="175" column="7" lean-forward="true" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="274">
+              <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/post_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/runcode/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-611">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="840">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -95,13 +94,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runcode/urls.py">
+        <entry file="file://$PROJECT_DIR$/mysite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1925">
+              <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -109,20 +105,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="-374">
+              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runcode/static/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -140,9 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>middle</find>
-      <find>time</find>
-      <find>login</find>
       <find>conte</find>
       <find>block</find>
       <find>middleware</find>
@@ -170,6 +154,9 @@
       <find>load</find>
       <find>code</find>
       <find>code_hom</find>
+      <find>infinite</find>
+      <find>put</find>
+      <find>host</find>
     </findStrings>
     <replaceStrings>
       <replace>runcode</replace>
@@ -206,12 +193,10 @@
         <option value="$PROJECT_DIR$/runcode/apps.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/runcode/static/css/runcode.css" />
-        <option value="$PROJECT_DIR$/runcode/templates/runcode/post_list.html" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/signup.html" />
         <option value="$PROJECT_DIR$/accounts/apps.py" />
         <option value="$PROJECT_DIR$/runcode/running/a.py" />
-        <option value="$PROJECT_DIR$/runcode/execcode.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/runcode/videosave.py" />
@@ -219,8 +204,6 @@
         <option value="$PROJECT_DIR$/runcode/templates/runcode/logs.html" />
         <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/mysite/settings.py" />
-        <option value="$PROJECT_DIR$/runcode/motion.conf" />
         <option value="$PROJECT_DIR$/runcode/motion_new.conf" />
         <option value="$PROJECT_DIR$/accounts/signals.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
@@ -232,8 +215,12 @@
         <option value="$PROJECT_DIR$/runcode/models.py" />
         <option value="$PROJECT_DIR$/runcode/templates/runcode/main.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/runcode/views.py" />
         <option value="$PROJECT_DIR$/runcode/static/main.js" />
+        <option value="$PROJECT_DIR$/runcode/execcode.py" />
+        <option value="$PROJECT_DIR$/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/runcode/motion.conf" />
+        <option value="$PROJECT_DIR$/runcode/templates/runcode/post_list.html" />
+        <option value="$PROJECT_DIR$/runcode/views.py" />
         <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
       </list>
     </option>
@@ -264,41 +251,12 @@
             <path>
               <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
               <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="runcode" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
               <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
               <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="user_1_shivam" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="videos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="videos" type="462c0819:PsiDirectoryNode" />
-              <item name="user_1_shivam" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
@@ -337,6 +295,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/bin/python3.6" />
@@ -443,6 +402,7 @@
       <workItem from="1553505669377" duration="38982000" />
       <workItem from="1553620061288" duration="7582000" />
       <workItem from="1553688093469" duration="16329000" />
+      <workItem from="1555096832055" duration="10107000" />
     </task>
     <task id="LOCAL-00001" summary="Added testing case (/running/answers.py)&#10;Little changes in frontend">
       <created>1551768907613</created>
@@ -455,12 +415,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139280000" />
+    <option name="totallyTimeSpent" value="149387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="27" width="960" height="1053" extended-state="4" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28118163" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28774616" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -474,7 +435,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3129103" side_tool="true" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.68708974" weight="0.34539473" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.68708974" visible="true" weight="0.34539473" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3267544" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -608,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/utils/functional.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -721,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/motion.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10500">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -742,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/logs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -783,23 +723,6 @@
     <entry file="file://$PROJECT_DIR$/runcode/data/user_1_shivam/27-03-19_170446.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/post_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -807,13 +730,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/views.py">
+    <entry file="file://$PROJECT_DIR$/runcode/static/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-611">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1725">
+          <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -827,20 +747,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/static/main.js">
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+        <state relative-caret-position="1925">
+          <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/motion.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="531" lean-forward="true" selection-start-line="531" selection-end-line="531" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/post_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/logs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="175" column="7" lean-forward="true" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
+        <state relative-caret-position="274">
+          <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

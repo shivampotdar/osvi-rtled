@@ -20,9 +20,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 from django.http import HttpResponseRedirect
 
-default_py_code = """
-print("Hello Python World!!")
-"""
+from fabric import Connection
+from mysite.settings import pi_ip
+
+default_py_code = """print("Hello Python World!!")"""
 
 default_rows = "7"
 default_cols = "70"
@@ -46,21 +47,22 @@ def py(request):
         code = default_py_code
         resrun = 'No result!'
         rescompil = ''
-    return render(request, 'runcode/post_list.html', {'code': code,'target': "runpy",'resrun': resrun,'rescomp': rescompil,
+    vid_url = pi_ip
+    return render(request, 'runcode/post_list.html', {'code': code,'target': "runpy",'resrun': resrun,'rescomp': rescompil,'vid_url':'http://'+pi_ip+':8081',
                                                       'rows': default_rows, 'cols': default_cols})
 
-global a
-a=0
+#global a
+a = 0
 
 @csrf_exempt
 @login_required
 def start_vid(request):
     global filename_global
     filename_global = 'user_{0}_{1}'.format(request.user.id, request.user.username)
-    with open(os.getcwd()+'/runcode/motion.conf') as fin, open(os.getcwd()+'/runcode/motion_new.conf','w') as fout:
+    with open('./runcode/motion.conf') as fin, open('./runcode/motion_new.conf','w') as fout:
         for i, item in enumerate(fin,1):
             if i == 450:    # 450 - dir for saving stuff
-                item = 'target_dir "'+os.getcwd()+'/runcode/data/videos/'+filename_global+'"\n'
+                item = 'target_dir "'+'/home/pi/runcode/data/videos/'+filename_global+'"\n'
                 print(item)
             if i == 473:    # 473 - filename pattern
                 global f
@@ -69,27 +71,36 @@ def start_vid(request):
                 item = 'movie_filename '+f+'\n'
                 print(item)
             fout.write(item)
-    cmd = ' echo samsanjana12 | sudo -S motion -b -c "'+os.getcwd()+'/runcode/motion_new.conf"'
-    os.system(cmd)
-    a=1
+    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
+    c.put('./runcode/motion_new.conf','runcode/motion_new.conf')
+    cmd = ' echo samsanjana12 | sudo -S motion -b -c '+'./runcode/motion_new.conf'
+    c.run(cmd)
+    #os.system(cmd)
+    global a
+    a = 1
+    print('a1=',a)
     sleep(1.5)          # don't have any other option as of now to wait for iframe loading
     return HttpResponseRedirect('/')
 
 @csrf_exempt
 @login_required
 def stop_vid(request):
+    print('a=', a)
+    cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
+    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
+    c.run(cmd)
     if a == 1:
-        cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
-        os.system(cmd)
-        sleep(5)
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
-        fopen = open(os.getcwd() + '/runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
+        f2save = c.get('./runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
+        fopen = open('./runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
-        os.remove(os.getcwd() + '/runcode/data/videos/' + filename_global + '/' + f + '.mp4')
+        cmd = './runcode/data/videos/' + filename_global
+        cmd = " echo samsanjana12 | sudo -S rm -rf "+cmd
+        c.run(cmd)
+        c.close()
+        #os.remove(os.getcwd() + ')
         return HttpResponseRedirect('/')
     else:
-        cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
-        os.system(cmd)
         return HttpResponseRedirect('/')
 
 

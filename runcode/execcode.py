@@ -2,7 +2,7 @@ import subprocess
 import sys
 import os
 import mmap
-
+from fabric import Connection
 
 class RunPyCode(object):
     
@@ -11,8 +11,8 @@ class RunPyCode(object):
         if not os.path.exists('./runcode/running'):
             os.mkdir('./runcode/running')
 
-    def _run_py_prog(self, cmd="a.py"):
-        cmd = [sys.executable, cmd]
+    def _run_py_prog(self, cmd="./osvi/a.py"):
+        '''cmd = [sys.executable, cmd]
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         try:
             result = p.wait(timeout=20)
@@ -20,7 +20,16 @@ class RunPyCode(object):
             self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
             return result
         except:
-            self.stdout, self.stderr = " ", "Execution Timed Out! Please don't use infinite loops"
+            self.stdout, self.stderr = " ", "Execution Timed Out! Please don't use infinite loops"'''
+
+        cmd = "python3 "+cmd
+        try:
+            c = Connection(host='172.20.10.3', user='pi', connect_kwargs={'password': 'samsanjana12'})
+            process = c.run(cmd)
+            self.stdout, self.stderr = process.stdout, process.stderr
+            c.close()
+        except:
+            self.stdout, self.stderr = "Cannot connect to RPi ", "Execution Timed Out!"
 
     
     def run_py_code(self, code=None):
@@ -29,6 +38,9 @@ class RunPyCode(object):
             code = self.code
         with open(filename, "w") as f:
             f.write(code)
+        c = Connection(host='172.20.10.3', user='pi', connect_kwargs={'password': 'samsanjana12'})
+        c.put("./runcode/running/a.py",'./runcode/running/a.py')
+        c.close()
         self.test_py_code(filename)
         return self.stderr, self.stdout
 
