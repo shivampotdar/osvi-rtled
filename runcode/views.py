@@ -91,6 +91,7 @@ def stop_vid(request):
     c.run(cmd)
     if a == 1:
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
+        os.system("mkdir ./runcode/data/videos/"+filename_global)
         f2save = c.get('/home/pi/runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
         fopen = open('./runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
