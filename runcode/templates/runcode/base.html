@@ -16,35 +16,34 @@
 
 	<nav class="nav-extended" style="background-color:#263238  !important;">
 		<div class="nav-wrapper">
-            <a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
+			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-			        <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
+				<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
 			</ul>
 		</div>
 		<div class="divider"></div>
 	</nav>
-  <ul class="sidenav" id="mobile-demo">
-    <li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
-    {% if user.is_authenticated %}
-    <li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
-    <li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
-    {% else %}
-    <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
-    <li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
-    {% endif %}
-  </ul>
+	<ul class="sidenav" id="mobile-demo">
+		<li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
+		{% if user.is_authenticated %}
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
+		{% else %}
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
+		{% endif %}
+	</ul>
 
-    <main style="padding:15px;">
+	<main style="padding:15px;">
 
-        <div class="row">
+		<div class="row">
 			<!-- ************  CODING ZONE  ************ -->
 			<div class="col s12 m6">
 				<div id="code">
 					<form method="post" id="runcode">{% csrf_token %}
 						<div id="title-code" class="head-section">
 							<h4>Source Code</h4>
-                        </div>
+						</div>
 						{% block code %}
 						{% endblock %}
 						<input id="launch-button" class="head-section btn" type="submit" value="Launch" />
@@ -62,65 +61,61 @@
 					{% endblock %}
 				</div>
 			</div>
-    	</div>
+		</div>
 
 		<!-- ************ COMPILATION RESULTS ZONE ************ -->
 		<div class="row">
 			<div class="col s12 m6">
 				<div id="compile">
 					<div id="title-compile" class="head-section">
-                        <h4>Compilation</h4>
+						<h4>Compilation</h4>
 					</div>
 					{% block comp %}
 					{% endblock %}
 				</div>
 			</div>
 
-		<!-- ************* WEBCAM IFRAME ************************** -->
+			<!-- ************* WEBCAM IFRAME ************************** -->
 			<div class="col s12 m6">
-				<div id="live_feed">
-					<div id="title-feed" class="head-section" style="display:inline-flex;">
-
-						<h4>Live Feed</h4>
-                        <div>
-                            <form action= '{% url 'start_vid'%}' method="POST" id="start_vid">{% csrf_token %}
-                                <input type="submit" value="Start" class="head-section btn" id="toggle1" />
-                            </form>
-                        </div>
-                        <h4>     </h4>
-                        <div>
-                            <form action= ' {% url 'stop_vid'%}' method="POST" id="stop_vid">{% csrf_token %}
-                                <input type="submit" value="Stop" class="head-section btn" id="toggle2" />
-                            </form>
-                        </div>
-					</div><br>
-					<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
-                    {% block video %}
-                    {% endblock %}
-
-                </div>
+				<div id="title-feed" class="row" style="display: block;">
+					<div class="col s12 m8" style="font-size:35px;">Live Feed</div>
+					<div class="col s12 m2">
+						<form action="{% url 'start_vid'%}" method="POST" id="start_vid">{% csrf_token %}
+							<input type="submit" value="Start" class="head-section btn" id="toggle1" />
+						</form>
+					</div>
+					<div class="col s12 m2">
+						<form action="{% url 'stop_vid'%}" method="POST" id="stop_vid">{% csrf_token %}
+							<input type="submit" value="Stop" class="head-section btn" id="toggle2" />
+						</form>
+					</div>
+				</div>
+				<!-- Make height and width changes by as needed by adding in the style (height:Xpx;width:Ypx;) -->
+				<!--<iframe src="http://172.20.10.2:8081" style="height: 30%;width: 100%;"></iframe><br>-->
+				<img src="http://localhost:8081" style="height: 30%;width: 100%;" id="iframe1">
 			</div>
+
 		</div>
 	</main>
 
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{% static 'ace/ace.js' %}"></script>
-  <script>
+	<script>
 		$(document).ready(function(){
 			$('.sidenav').sidenav();
 			/*console.log("hi")
           var referrer= document.getElementById('runcode')
             var abc = "{% url 'code_home' %}"
           console.log(referrer)
-            console.log(abc)*/
-		});
+          console.log(abc)*/
+      });
   </script>
-    <script>
+  <script>
 		// The Ace editor needs divs instead of textareas
 		// So we hide the textarea and show a div instead
 		var editorElement = document.getElementById("text-code");
@@ -169,7 +164,7 @@
       });
     </script>
     */
-      -->
+-->
 <<script src="../../static/main.js"></script>
 
 </body>
