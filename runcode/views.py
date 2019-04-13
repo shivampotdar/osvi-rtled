@@ -91,7 +91,7 @@ def stop_vid(request):
     c.run(cmd)
     if a == 1:
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
-        f2save = c.get('./runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
+        f2save = c.get('/home/pi/runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
         fopen = open('./runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
         cmd = './runcode/data/videos/' + filename_global
@@ -114,6 +114,7 @@ def unique(list1):
             unique_list.append(a) 
     return unique_list 
 
+@login_required
 def logtable(request):
 
     if request.user.is_staff or request.user.is_superuser:
