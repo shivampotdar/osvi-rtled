@@ -103,14 +103,40 @@ def stop_vid(request):
     else:
         return HttpResponseRedirect('/')
 
+def unique(list1): 
+    # intilize a null list 
+    unique_list = [] 
+    # traverse for all elements 
+    for x in list1: 
+        # check if exists in unique_list or not 
+        a = x.session
+        if a not in unique_list: 
+            unique_list.append(a) 
+    return unique_list 
 
 def logtable(request):
+
     if request.user.is_staff or request.user.is_superuser:
         table = PycodeTable(Pycode.objects.all())
+        user_data =  Pycode.objects.all()
+        user_videos = UserVids.objects.all()
+        unique_sessions = unique(Pycode.objects.all())
         table2 = UserVidsTable(UserVids.objects.all())
         #table3 =
     else:
         table = PycodeTable(Pycode.objects.filter(author = request.user.id))
         table2 = UserVidsTable(UserVids.objects.filter(author = request.user.id))
     RequestConfig(request).configure(table)
-    return render(request, 'runcode/logs.html', {'table': table,'table2': table2})
+    return render(request, 'runcode/logs.html', { 'table': table,'table2': table2, 'unique_sessions' : unique_sessions, 'user_data' : user_data, 'user_videos' : user_videos })
+
+
+# def logtable(request):
+#     if request.user.is_staff or request.user.is_superuser:
+#         table = PycodeTable(Pycode.objects.all())
+#         table2 = UserVidsTable(UserVids.objects.all())
+#         #table3 =
+#     else:
+#         table = PycodeTable(Pycode.objects.filter(author = request.user.id))
+#         table2 = UserVidsTable(UserVids.objects.filter(author = request.user.id))
+#     RequestConfig(request).configure(table)
+#     return render(request, 'runcode/logs.html', {'table': table,'table2': table2})
