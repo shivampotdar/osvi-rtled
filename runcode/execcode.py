@@ -32,7 +32,7 @@ class RunPyCode(object):
             self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
             return result
         except:
-            self.stdout, self.stderr = "Cannot connect to RPi ", "Execution Timed Out!"
+            self.stdout, self.stderr = "", "Execution Timed Out!, No infinite loops please"
 
     
     def run_py_code(self, code=None):

@@ -77,23 +77,21 @@ def start_vid(request):
     #os.system(cmd)
     global a
     a = 1
-    print('a1=',a)
+    #print('a1=',a)
     sleep(1.5)          # don't have any other option as of now to wait for iframe loading
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/runcode/')
 
 @csrf_exempt
 @login_required
 def stop_vid(request):
     print('a=', a)
+    sleep(10)
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
     c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
     c.run(cmd)
     if a == 1:
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
-        try:
-            f2save = c.get('./runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
-        except:
-            pass
+        f2save = c.get('./runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
         fopen = open('./runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
         cmd = './runcode/data/videos/' + filename_global
@@ -101,9 +99,9 @@ def stop_vid(request):
         c.run(cmd)
         c.close()
         #os.remove(os.getcwd() + ')
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/runcode/')
     else:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/runcode/')
 
 def unique(list1): 
     # intilize a null list 
