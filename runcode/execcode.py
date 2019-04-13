@@ -3,6 +3,7 @@ import sys
 import os
 import mmap
 from fabric import Connection
+from mysite.settings import pi_ip
 
 class RunPyCode(object):
     
@@ -22,12 +23,14 @@ class RunPyCode(object):
         except:
             self.stdout, self.stderr = " ", "Execution Timed Out! Please don't use infinite loops"'''
 
-        cmd = "python3 "+cmd
+        #cmd = "python3 "+cmd
+        p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@"+pi_ip+" python3 "+cmd,
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         try:
-            c = Connection(host='172.20.10.3', user='pi', connect_kwargs={'password': 'samsanjana12'})
-            process = c.run(cmd)
-            self.stdout, self.stderr = process.stdout, process.stderr
-            c.close()
+            result = p.wait(timeout=20)
+            a, b = p.communicate()
+            self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
+            return result
         except:
             self.stdout, self.stderr = "Cannot connect to RPi ", "Execution Timed Out!"
 
@@ -38,7 +41,7 @@ class RunPyCode(object):
             code = self.code
         with open(filename, "w") as f:
             f.write(code)
-        c = Connection(host='172.20.10.3', user='pi', connect_kwargs={'password': 'samsanjana12'})
+        c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
         c.put("./runcode/running/a.py",'./runcode/running/a.py')
         c.close()
         self.test_py_code(filename)

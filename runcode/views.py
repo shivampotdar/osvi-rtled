@@ -42,7 +42,6 @@ def py(request):
         filename = 'user_{0}_{1}/{2}'.format(request.user.id, request.user.username, fname)
         filename = filename+'.py'
         var.pycode.save(filename,ContentFile(code))
-
     else:
         code = default_py_code
         resrun = 'No result!'
@@ -91,7 +90,10 @@ def stop_vid(request):
     c.run(cmd)
     if a == 1:
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)
-        f2save = c.get('./runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
+        try:
+            f2save = c.get('./runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
+        except:
+            pass
         fopen = open('./runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
         cmd = './runcode/data/videos/' + filename_global

@@ -102,11 +102,13 @@ function stop_vid() {
     document.location.reload(1)
 };
 
-
+/*
 $('#runcode').click(function(){
     console.log("Hello");
     start_vid();
 });
+*/
+ */
 /*
 $('#runcode').on('submit', function(event){
     event.preventDefault();
