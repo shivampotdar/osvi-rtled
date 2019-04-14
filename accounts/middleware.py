@@ -3,11 +3,12 @@ from django.contrib.sessions.models import Session
 from .models import LoggedInUser
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect
-from .views import single_user
+from .views import single_user, time_up
 #from django.core.cache import cache, get_cache
 from django.core.cache import caches
 from importlib import import_module
 from django.conf import settings
+from django.utils import timezone
 
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
@@ -23,6 +24,10 @@ class OneSessionPerUserMiddleware:
             return single_user(request)
         if request.user.is_authenticated:
             stored_session_key = request.user.logged_in_user.session_key
+            tnow = timezone.now()
+            tlogin = request.user.logged_in_user.login_time
+            if (tnow - tlogin).seconds > settings.time_up:
+                return time_up(request)
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key
             # session_key with from the Session table
@@ -30,6 +35,7 @@ class OneSessionPerUserMiddleware:
                 Session.objects.get(session_key=stored_session_key).delete()
             request.user.logged_in_user.session_key = request.session.session_key
             request.user.logged_in_user.save()
+
         response = self.get_response(request)
         '''if request.user.is_authenticated:
             cache = caches['default']

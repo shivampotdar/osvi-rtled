@@ -14,3 +14,7 @@ class SignUp(generic.CreateView):
 def single_user(request):
     logout(request)
     return HttpResponse('Hello')
+
+def time_up(request):
+    logout(request)
+    return HttpResponse('TimeUp')
