@@ -135,6 +135,8 @@ MEDIA_URL = '/media/'
 #SESSION_COOKIE_AGE = 10 #logs out user after 5 minutes
 # django-session-security for logout when inactive
 
+t_out = 300
+
 pi_ip = '10.100.82.252'
-time_up = 300
+
 # logout after time_up

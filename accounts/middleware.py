@@ -9,6 +9,7 @@ from django.core.cache import caches
 from importlib import import_module
 from django.conf import settings
 from django.utils import timezone
+from mysite.settings import t_out
 
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
@@ -26,7 +27,7 @@ class OneSessionPerUserMiddleware:
             stored_session_key = request.user.logged_in_user.session_key
             tnow = timezone.now()
             tlogin = request.user.logged_in_user.login_time
-            if (tnow - tlogin).seconds > settings.time_up:
+            if (tnow - tlogin).seconds > t_out:
                 return time_up(request)
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key
