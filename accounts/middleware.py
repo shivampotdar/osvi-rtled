@@ -28,7 +28,10 @@ class OneSessionPerUserMiddleware:
             tnow = timezone.now()
             tlogin = request.user.logged_in_user.login_time
             if (tnow - tlogin).seconds > t_out:
-                return time_up(request)
+                if request.user.is_staff or request.user.is_superuser:
+                    pass
+                else:
+                    return time_up(request)
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key
             # session_key with from the Session table
