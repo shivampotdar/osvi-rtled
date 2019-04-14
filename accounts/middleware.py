@@ -36,7 +36,7 @@ class OneSessionPerUserMiddleware:
             cache_timeout = 86400
             cache_key = "user_pk_%s_restrict" % request.user.pk
             cache_value = cache.get(cache_key)
-
+            print
             if cache_value is not None:
                 if request.session.session_key != cache_value:
                     engine = import_module(settings.SESSION_ENGINE)
