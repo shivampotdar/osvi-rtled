@@ -17,21 +17,21 @@ class OneSessionPerUserMiddleware:
     def __call__(self, request):
         # Code to be executed for each request before
         # the view (and later middleware) are called.
-        #if request.user.is_authenticated:
-            #stored_session_key = request.user.logged_in_user.session_key
-            # if there is a stored_session_key  in our database and it is
-            # different from the current session, delete the stored_session_key
-            # session_key with from the Session table
-            #if stored_session_key and stored_session_key != request.session.session_key:
-             #   Session.objects.get(session_key=stored_session_key).delete()
-            #request.user.logged_in_user.session_key = request.session.session_key
-            #request.user.logged_in_user.save()
-        response = self.get_response(request)
         print(LoggedInUser.objects.count())
         if len(LoggedInUser.objects.all()) > 1:
             #return redirect('/accounts/logout/')
             return single_user(request)
         if request.user.is_authenticated:
+            stored_session_key = request.user.logged_in_user.session_key
+            # if there is a stored_session_key  in our database and it is
+            # different from the current session, delete the stored_session_key
+            # session_key with from the Session table
+            if stored_session_key and stored_session_key != request.session.session_key:
+                Session.objects.get(session_key=stored_session_key).delete()
+            request.user.logged_in_user.session_key = request.session.session_key
+            request.user.logged_in_user.save()
+        response = self.get_response(request)
+        '''if request.user.is_authenticated:
             cache = caches['default']
             cache_timeout = 86400
             cache_key = "user_pk_%s_restrict" % request.user.pk
@@ -45,7 +45,7 @@ class OneSessionPerUserMiddleware:
                     cache.set(cache_key, request.session.session_key,
                               cache_timeout)
             else:
-                cache.set(cache_key, request.session.session_key, cache_timeout)
+                cache.set(cache_key, request.session.session_key, cache_timeout)'''
         return response
         # This is where you add any extra code to be executed for each request/response after
         # the view is called.

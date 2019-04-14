@@ -38,11 +38,11 @@ def py(request):
         if not resrun:
             resrun = 'No result!'
         print(request.user.logged_in_user.session_key)
-        #var = Pycode(author = request.user, postdate= timezone.now(),result_error=rescompil,result_output=resrun, session=request.user.logged_in_user.session_key)
+        var = Pycode(author = request.user, postdate= timezone.now(),result_error=rescompil,result_output=resrun, session=request.user.logged_in_user.session_key)
         fname = timezone.now().strftime('%d-%m-%y_%H:%M:%S')
         filename = 'user_{0}_{1}/{2}'.format(request.user.id, request.user.username, fname)
         filename = filename+'.py'
-        #var.pycode.save(filename,ContentFile(code))
+        var.pycode.save(filename,ContentFile(code))
     else:
         code = default_py_code
         resrun = 'No result!'
