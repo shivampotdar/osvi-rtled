@@ -5,6 +5,9 @@ from django.contrib.sessions.models import Session
 from django.utils import timezone
 import os
 #import RPi.GPIO as GP
+from fabric import Connection
+from mysite.settings import pi_ip
+
 
 @receiver(user_logged_in)
 def on_user_logged_in(sender, request, **kwargs):
@@ -16,6 +19,7 @@ def on_user_logged_in(sender, request, **kwargs):
 @receiver(user_logged_out)
 def on_user_logged_out(sender, **kwargs):
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
+    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
+    c.run(cmd)
     #GP.cleanup()
-    os.system(cmd)
     LoggedInUser.objects.filter(user=kwargs.get('user')).delete()
