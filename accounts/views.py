@@ -12,5 +12,5 @@ class SignUp(generic.CreateView):
 
 
 def single_user(request):
-    #logout(request)
+    logout(request)
     return HttpResponse('Hello')
