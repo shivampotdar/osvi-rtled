@@ -37,15 +37,12 @@ class OneSessionPerUserMiddleware:
             #if len(LoggedInUser.objects.all()) > 1:
             if LoggedInUser.objects.count() > 1:
                 print("here")
-                obj = LoggedInUser.objects.all()[0]
-                if obj.user.id == request.user.id:
-                    pass
-                else:
-                    if (timezone.now()-obj.user.last_login).seconds > t_out:
-                        user=User.objects.get(pk=obj.user_id)
-                        [s.delete() for s in Session.objects.all() if
-                         str(s.get_decoded().get('_auth_user_id')) == str(user.id)]
-                        #obj.delete()
+                obj = LoggedInUser.objects.exclude(user_id=request.user.id)
+                for i in obj:
+                    if (timezone.now()-i.user.last_login).seconds > t_out:
+                        user=User.objects.get(pk=i.user_id)
+                        [s.delete() for s in Session.objects.all() if str(s.get_decoded().get('_auth_user_id')) == str(user.id)]
+                        i.delete()
                     else:
                         return single_user(request)
             tnow = timezone.now()
