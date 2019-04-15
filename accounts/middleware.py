@@ -24,11 +24,12 @@ class OneSessionPerUserMiddleware:
         # but LoggedInUser will still have that entry, due to which someone else won't be able to log in.
 
         tnow = timezone.now()
-        if LoggedInUser.objects.count() != 0:
+        '''
+        if LoggedInUser.objects.count != 0:
             o = LoggedInUser.objects.all()[0]
             t1 = o.user.last_login
-            if (tnow - t1).seconds > t_out:
-                o.delete()
+            if (tnow - t1).seconds > t_out
+            o.delete()'''
         print(LoggedInUser.objects.count())
         if len(LoggedInUser.objects.all()) > 1:
             #return redirect('/accounts/logout/')
