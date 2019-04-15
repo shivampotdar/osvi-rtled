@@ -7,6 +7,7 @@ import os
 #import RPi.GPIO as GP
 from fabric import Connection
 from mysite.settings import pi_ip
+import subprocess
 
 
 @receiver(user_logged_in)
@@ -19,7 +20,10 @@ def on_user_logged_in(sender, request, **kwargs):
 @receiver(user_logged_out)
 def on_user_logged_out(sender, **kwargs):
     cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
-    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
-    c.run(cmd)
+    #c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
+    #c.run(cmd)
+    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + " python3 " + cmd,
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    p.communicate()
     #GP.cleanup()
     LoggedInUser.objects.filter(user=kwargs.get('user')).delete()

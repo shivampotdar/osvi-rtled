@@ -132,10 +132,11 @@ LOGOUT_REDIRECT_URL = 'home'
 MEDIA_ROOT = os.path.join(BASE_DIR,'runcode/data/')
 MEDIA_URL = '/media/'
 
-#SESSION_COOKIE_AGE = 10 #logs out user after 5 minutes
+# SESSION_COOKIE_AGE = 25 #logs out user after 5 minutes
 # django-session-security for logout when inactive
 
-t_out = 300
+
+t_out = 20
 
 pi_ip = '10.100.82.252'
 

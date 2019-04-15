@@ -118,7 +118,6 @@ def unique(list1):
 
 @login_required
 def logtable(request):
-
     if request.user.is_staff or request.user.is_superuser:
         table = PycodeTable(Pycode.objects.all())
         user_data =  Pycode.objects.all()
@@ -128,6 +127,9 @@ def logtable(request):
         #table3 =
     else:
         table = PycodeTable(Pycode.objects.filter(author = request.user.id))
+        user_data = Pycode.objects.filter(author = request.user.id)
+        user_videos = UserVids.objects.filter(author = request.user.id)
+        unique_sessions = unique(Pycode.objects.filter(author = request.user.id))
         table2 = UserVidsTable(UserVids.objects.filter(author = request.user.id))
     RequestConfig(request).configure(table)
     return render(request, 'runcode/logs.html', { 'table': table,'table2': table2, 'unique_sessions' : unique_sessions, 'user_data' : user_data, 'user_videos' : user_videos })

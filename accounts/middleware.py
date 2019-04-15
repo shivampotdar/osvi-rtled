@@ -19,13 +19,23 @@ class OneSessionPerUserMiddleware:
     def __call__(self, request):
         # Code to be executed for each request before
         # the view (and later middleware) are called.
+
+        #!!!! BUG --session expire is enabled, so user's session is expired even if the time thing below doesn't log him out
+        # but LoggedInUser will still have that entry, due to which someone else won't be able to log in.
+
+        tnow = timezone.now()
+        if LoggedInUser.objects.count() != 0:
+            o = LoggedInUser.objects.all()[0]
+            t1 = o.user.last_login
+            if (tnow - t1).seconds > t_out:
+                o.delete()
         print(LoggedInUser.objects.count())
         if len(LoggedInUser.objects.all()) > 1:
             #return redirect('/accounts/logout/')
             return single_user(request)
         if request.user.is_authenticated:
             stored_session_key = request.user.logged_in_user.session_key
-            tnow = timezone.now()
+
             tlogin = request.user.logged_in_user.login_time
             if (tnow - tlogin).seconds > t_out:
                 if request.user.is_staff or request.user.is_superuser:
