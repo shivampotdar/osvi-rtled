@@ -10,6 +10,7 @@ from importlib import import_module
 from django.conf import settings
 from django.utils import timezone
 from mysite.settings import t_out
+from django.contrib.auth.models import User
 
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
@@ -23,20 +24,31 @@ class OneSessionPerUserMiddleware:
         #!!!! BUG --session expire is enabled, so user's session is expired even if the time thing below doesn't log him out
         # but LoggedInUser will still have that entry, due to which someone else won't be able to log in.
 
-        tnow = timezone.now()
-        '''
-        if LoggedInUser.objects.count != 0:
+
+
+        '''if LoggedInUser.objects.count() != 0:
             o = LoggedInUser.objects.all()[0]
             t1 = o.user.last_login
-            if (tnow - t1).seconds > t_out
-            o.delete()'''
+            if (tnow - t1).seconds > t_out:
+                print("hi")
+            #o.delete()'''
         print(LoggedInUser.objects.count())
-        if len(LoggedInUser.objects.all()) > 1:
-            #return redirect('/accounts/logout/')
-            return single_user(request)
         if request.user.is_authenticated:
-            stored_session_key = request.user.logged_in_user.session_key
-
+            #if len(LoggedInUser.objects.all()) > 1:
+            if LoggedInUser.objects.count() > 1:
+                print("here")
+                obj = LoggedInUser.objects.all()[0]
+                if obj.user.id == request.user.id:
+                    pass
+                else:
+                    if (timezone.now()-obj.user.last_login).seconds > t_out:
+                        user=User.objects.get(pk=obj.user_id)
+                        [s.delete() for s in Session.objects.all() if
+                         str(s.get_decoded().get('_auth_user_id')) == str(user.id)]
+                        #obj.delete()
+                    else:
+                        return single_user(request)
+            tnow = timezone.now()
             tlogin = request.user.logged_in_user.login_time
             if (tnow - tlogin).seconds > t_out:
                 if request.user.is_staff or request.user.is_superuser:
@@ -46,54 +58,13 @@ class OneSessionPerUserMiddleware:
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key
             # session_key with from the Session table
+            stored_session_key = request.user.logged_in_user.session_key
             if stored_session_key and stored_session_key != request.session.session_key:
                 Session.objects.get(session_key=stored_session_key).delete()
             request.user.logged_in_user.session_key = request.session.session_key
             request.user.logged_in_user.save()
-
         response = self.get_response(request)
-        '''if request.user.is_authenticated:
-            cache = caches['default']
-            cache_timeout = 86400
-            cache_key = "user_pk_%s_restrict" % request.user.pk
-            cache_value = cache.get(cache_key)
-            print
-            if cache_value is not None:
-                if request.session.session_key != cache_value:
-                    engine = import_module(settings.SESSION_ENGINE)
-                    session = engine.SessionStore(session_key=cache_value)
-                    session.delete()
-                    cache.set(cache_key, request.session.session_key,
-                              cache_timeout)
-            else:
-                cache.set(cache_key, request.session.session_key, cache_timeout)'''
         return response
         # This is where you add any extra code to be executed for each request/response after
         # the view is called.
         # For this tutorial, we're not adding any code so we just return the response
-
-'''
-class OneSessionPerUserMiddleware:
-    def process_request(self, request):
-        """
-        Checks if different session exists for user and deletes it.
-        """
-        if len(LoggedInUser.objects.all()) > 1:
-            # return redirect('/accounts/logout/')
-            return single_user(request)
-        if request.user.is_authenticated():
-            cache = caches('default')
-            cache_timeout = 86400
-            cache_key = "user_pk_%s_restrict" % request.user.pk
-            cache_value = cache.get(cache_key)
-
-            if cache_value is not None:
-                if request.session.session_key != cache_value:
-                    engine = import_module(settings.SESSION_ENGINE)
-                    session = engine.SessionStore(session_key=cache_value)
-                    session.delete()
-                    cache.set(cache_key, request.session.session_key,
-                              cache_timeout)
-            else:
-                cache.set(cache_key, request.session.session_key, cache_timeout)
-'''
