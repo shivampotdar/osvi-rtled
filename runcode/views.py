@@ -87,7 +87,7 @@ def start_vid(request):
 def stop_vid(request):
     print('a=', a)
     sleep(10)
-    cmd = " var=$(pidof motion) && echo samsanjana12 | sudo -S kill $var"
+    cmd = " sshpass -p samsanjana12 ssh -p22 pi@"+pi_ip+" sudo pkill motion"
     c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
     c.run(cmd)
     if a == 1:

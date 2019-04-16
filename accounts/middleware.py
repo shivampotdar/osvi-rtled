@@ -9,8 +9,10 @@ from django.core.cache import caches
 from importlib import import_module
 from django.conf import settings
 from django.utils import timezone
-from mysite.settings import t_out
+from mysite.settings import t_out, pi_ip
 from django.contrib.auth.models import User
+import subprocess
+
 
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
@@ -51,6 +53,14 @@ class OneSessionPerUserMiddleware:
                 if request.user.is_staff or request.user.is_superuser:
                     pass
                 else:
+                    cmd = " sudo pkill motion"
+                    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd,
+                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    p.communicate()
+                    cmd2 = " python3 /home/pi/runcode/stopit.py"
+                    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd2,
+                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    p.communicate()
                     return time_up(request)
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key

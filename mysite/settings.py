@@ -136,7 +136,7 @@ MEDIA_URL = '/media/'
 # django-session-security for logout when inactive
 
 
-t_out = 30
+t_out = 300
 
 pi_ip = '10.100.82.252'
 
