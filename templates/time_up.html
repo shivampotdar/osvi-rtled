@@ -5,14 +5,15 @@
 
 {% block content %}
 <div class="card" style="padding:20px;">
-  <h4 class="center">Hi! Your session has timed out.</h4>
+    <h4 class="center">Hi! Your session has exceeded permissible time of five minutes</h4><br>
+    <h4 class="center">You have been logged out</h4>
   <div class="row">
-      <a class="btn-large blue-grey darken-4" href="{% url 'login' %}">login</a>
+      <a class="btn-large blue-grey darken-4" href="{% url 'home' %}">login</a>
   </div>
-  OR
+<!--  OR
   <div class="row">
       <a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">signup</a>
-  </div>
+  </div>-->
 
 </div>
 
