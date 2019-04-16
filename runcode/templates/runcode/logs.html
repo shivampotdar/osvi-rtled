@@ -20,26 +20,31 @@
 			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">Open Source Virtual Instrumentation-Remote Trigger </a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a class="btn-large blue-grey darken-4" href="{% url 'home' %}">Home</a></li>
 				{% if user.is_authenticated %}
+				<li><a class="btn-large blue-grey darken-4" href="{% url 'code_home' %}">Code Testing</a></li>
 				<li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
-				<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
+				<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
 				{% else %}
-				<li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
-				<li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
+		                <li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+		                <li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
 				{% endif %}
 			</ul>
 		</div>
 		<div class="divider"></div>
 	</nav>
 	<ul class="sidenav" id="mobile-demo">
-		<li><a class="btn-large blue-grey darken-4" href="/">Home</a></li>
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'home' %}">Home</a></li>
 		{% if user.is_authenticated %}
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'code_home' %}">Code Testing</a></li>
+		<li><a class="btn-large blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
 		<li><a class="btn-large blue-grey darken-4" href="{% url 'logout' %}">Log Out</a></li>
 		{% else %}
 		<li><a class="btn-large blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
 		<li><a class="btn-large blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
-		{% endif %}
-	</ul>
+  		{% endif %}
+        </ul>
+
 
 	<main>
 
