@@ -10,4 +10,3 @@ while True: # Run forever
  sleep(1) # Sleep for 1 second
  GPIO.output(8, GPIO.LOW) # Turn off
  sleep(1) # Sleep for 1 second
-
