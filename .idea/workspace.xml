@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520831f2-30b9-47bf-a636-31983268d994" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/runcode/templates/runcode/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/templates/runcode/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="163" column="304" lean-forward="true" selection-start-line="163" selection-start-column="304" selection-end-line="163" selection-end-column="304" />
+            <state relative-caret-position="192">
+              <caret line="160" column="284" selection-start-line="160" selection-start-column="284" selection-end-line="160" selection-end-column="284" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -121,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
-              <caret line="83" column="196" selection-start-line="83" selection-start-column="196" selection-end-line="83" selection-end-column="196" />
+              <caret line="83" column="276" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="276" />
             </state>
           </provider>
         </entry>
@@ -199,8 +200,8 @@
       <find>system</find>
       <find>team</find>
       <find>csd</find>
-      <find>osvi-rt</find>
       <find>osvi</find>
+      <find>osvi-rt</find>
     </findStrings>
     <replaceStrings>
       <replace>runcode</replace>
@@ -266,15 +267,15 @@
         <option value="$PROJECT_DIR$/accounts/middleware.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/templates/team.html" />
-        <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="25" />
-    <option name="width" value="1853" />
+    <option name="width" value="927" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -402,7 +403,7 @@
       <workItem from="1555160442823" duration="5269000" />
       <workItem from="1555221064580" duration="20499000" />
       <workItem from="1555339444846" duration="5858000" />
-      <workItem from="1555388151359" duration="13963000" />
+      <workItem from="1555388151359" duration="14600000" />
     </task>
     <task id="LOCAL-00001" summary="Added testing case (/running/answers.py)&#10;Little changes in frontend">
       <created>1551768907613</created>
@@ -415,13 +416,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204544000" />
+    <option name="totallyTimeSpent" value="205181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15052573" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15052573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,14 +436,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3193138" side_tool="true" weight="0.34341252" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.68068624" visible="true" weight="0.34341252" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.68068624" visible="true" weight="0.34341252" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4964029" weight="0.3261339" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" sideWeight="0.49916247" visible="true" weight="0.1776425" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.49916247" visible="true" weight="0.08854455" />
       <window_info anchor="right" x="0" y="0" width="430" height="853" id="Documentation" order="5" sideWeight="0.5008375" side_tool="true" visible="true" weight="0.16168623" />
     </layout>
     <layout-to-restore>
@@ -832,10 +833,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="83" column="276" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="276" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="163" column="304" lean-forward="true" selection-start-line="163" selection-start-column="304" selection-end-line="163" selection-end-column="304" />
+        <state relative-caret-position="192">
+          <caret line="160" column="284" selection-start-line="160" selection-start-column="284" selection-end-line="160" selection-end-column="284" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -844,13 +852,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="83" column="196" selection-start-line="83" selection-start-column="196" selection-end-line="83" selection-end-column="196" />
         </state>
       </provider>
     </entry>
