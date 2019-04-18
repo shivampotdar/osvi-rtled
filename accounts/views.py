@@ -19,3 +19,6 @@ def single_user(request):
 def time_up(request):
     logout(request)
     return render(request, 'time_up.html')
+
+def team(request):
+    return render(request, 'team.html')
