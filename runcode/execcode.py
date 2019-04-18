@@ -13,17 +13,6 @@ class RunPyCode(object):
             os.mkdir('./runcode/running')
 
     def _run_py_prog(self, cmd="./osvi/a.py"):
-        '''cmd = [sys.executable, cmd]
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        try:
-            result = p.wait(timeout=20)
-            a, b = p.communicate()
-            self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
-            return result
-        except:
-            self.stdout, self.stderr = " ", "Execution Timed Out! Please don't use infinite loops"'''
-
-        #cmd = "python3 "+cmd
         p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@"+pi_ip+" python3 "+cmd,
                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         try:
@@ -32,9 +21,10 @@ class RunPyCode(object):
             self.stdout, self.stderr = a.decode("utf-8"), b.decode("utf-8")
             return result
         except:
-            self.stdout, self.stderr = "", "Execution Timed Out!, No infinite loops please"
+            self.stdout, self.stderr = "Your output should be visible on the live stream, since programmatically " \
+                                       "you have used an infinite loop, the execution will time out after 20 seconds", \
+                                       "Execution Timed Out!, No infinite loops please"
 
-    
     def run_py_code(self, code=None):
         filename = "./runcode/running/a.py"
         if not code:

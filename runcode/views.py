@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 import os
 from time import sleep
 from django.utils import timezone
-
+import subprocess
 from .models import Pycode,UserVids
 import runcode.execcode as exec
 from django.core.files.base import ContentFile
@@ -75,10 +75,8 @@ def start_vid(request):
     c.put('./runcode/motion_new.conf','runcode/motion_new.conf')
     cmd = ' echo samsanjana12 | sudo -S motion -b -c '+'./runcode/motion_new.conf'
     c.run(cmd)
-    #os.system(cmd)
     global a
     a = 1
-    #print('a1=',a)
     sleep(1.5)          # don't have any other option as of now to wait for iframe loading
     return HttpResponseRedirect('/runcode/')
 
@@ -99,6 +97,10 @@ def stop_vid(request):
         cmd2 = "echo samsanjana12 | sudo -S rm -rf ./runcode/data/videos"
         c.run(cmd2)
         c.close()
+        cmd2 = " python3 /home/pi/runcode/stopit.py"
+        p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd2,
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        p.communicate()
         #os.remove(os.getcwd() + ')
         return HttpResponseRedirect('/runcode/')
     else:

@@ -13,15 +13,12 @@ import subprocess
 @receiver(user_logged_in)
 def on_user_logged_in(sender, request, **kwargs):
     LoggedInUser.objects.get_or_create(user=kwargs.get('user'))
-    #LoggedInUser.login_time
     request.user.logged_in_user.login_time = timezone.now()
     request.user.logged_in_user.save()
 
 @receiver(user_logged_out)
 def on_user_logged_out(sender, **kwargs):
     cmd = " sudo pkill motion"
-    #c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
-    #c.run(cmd)
     p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     p.communicate()
@@ -33,5 +30,4 @@ def on_user_logged_out(sender, **kwargs):
     p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd3,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     p.communicate()
-    #GP.cleanup()
     LoggedInUser.objects.filter(user=kwargs.get('user')).delete()
