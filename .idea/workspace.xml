@@ -5,9 +5,8 @@
       <change beforePath="$PROJECT_DIR$/accounts/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runcode/execcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/execcode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runcode/motion_new.conf" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/motion_new.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runcode/running/a.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/running/a.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runcode/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,15 +68,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="142" column="22" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
@@ -92,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accounts/signals.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="612">
+              <caret line="34" column="19" selection-start-line="31" selection-start-column="4" selection-end-line="34" selection-end-column="19" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -101,23 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runcode/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="91" column="14" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="58" column="35" lean-forward="true" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+            <state relative-caret-position="187">
+              <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
               <folding>
                 <element signature="e#39#89#0" expanded="true" />
               </folding>
@@ -125,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+            <state relative-caret-position="475">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -235,7 +213,6 @@
         <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
         <option value="$PROJECT_DIR$/runcode/static/main.js" />
         <option value="$PROJECT_DIR$/runcode/templates/runcode/logs.html" />
-        <option value="$PROJECT_DIR$/runcode/execcode.py" />
         <option value="$PROJECT_DIR$/mysite/wsgi.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
@@ -246,6 +223,7 @@
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/runcode/views.py" />
         <option value="$PROJECT_DIR$/accounts/signals.py" />
+        <option value="$PROJECT_DIR$/runcode/execcode.py" />
         <option value="$PROJECT_DIR$/accounts/middleware.py" />
       </list>
     </option>
@@ -294,12 +272,28 @@
               <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
               <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
               <item name="runcode" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
               <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="runcode" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
+              <item name="runcode" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
+              <item name="user_1_shivam" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="osvi-rtled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="osvi-rtled" type="462c0819:PsiDirectoryNode" />
+              <item name="runcode" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -368,7 +362,7 @@
       <workItem from="1555160442823" duration="5269000" />
       <workItem from="1555221064580" duration="20499000" />
       <workItem from="1555339444846" duration="5858000" />
-      <workItem from="1555388151359" duration="3922000" />
+      <workItem from="1555388151359" duration="6534000" />
     </task>
     <task id="LOCAL-00001" summary="Added testing case (/running/answers.py)&#10;Little changes in frontend">
       <created>1551768907613</created>
@@ -381,13 +375,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194503000" />
+    <option name="totallyTimeSpent" value="197115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15052573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15052573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -509,13 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="585" selection-start-line="585" selection-end-line="585" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/motion_new.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="425" column="14" selection-start-line="425" selection-start-column="14" selection-end-line="425" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -759,12 +746,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/signals.py">
+    <entry file="file://$PROJECT_DIR$/runcode/motion_new.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="744">
+          <caret line="769" column="31" lean-forward="true" selection-start-line="769" selection-start-column="31" selection-end-line="769" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="131" column="18" lean-forward="true" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
-            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -779,39 +780,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="142" column="22" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runcode/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="91" column="14" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+        <state relative-caret-position="-83">
+          <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
+    <entry file="file://$PROJECT_DIR$/accounts/signals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="58" column="35" lean-forward="true" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+        <state relative-caret-position="612">
+          <caret line="34" column="19" selection-start-line="31" selection-start-column="4" selection-end-line="34" selection-end-column="19" />
           <folding>
-            <element signature="e#39#89#0" expanded="true" />
+            <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcode/execcode.py">
+    <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+        <state relative-caret-position="187">
+          <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#39#89#0" expanded="true" />
           </folding>
         </state>
       </provider>

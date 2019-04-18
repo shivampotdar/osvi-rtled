@@ -29,5 +29,9 @@ def on_user_logged_out(sender, **kwargs):
     p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd2,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     p.communicate()
+    cmd3 = "echo samsanjana12 | sudo -S rm -rf ./runcode/data/videos"
+    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd3,
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    p.communicate()
     #GP.cleanup()
     LoggedInUser.objects.filter(user=kwargs.get('user')).delete()

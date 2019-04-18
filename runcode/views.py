@@ -87,7 +87,7 @@ def start_vid(request):
 def stop_vid(request):
     print('a=', a)
     sleep(10)
-    cmd = " sshpass -p samsanjana12 ssh -p22 pi@"+pi_ip+" sudo pkill motion"
+    cmd = " sudo pkill motion"
     c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
     c.run(cmd)
     if a == 1:
@@ -96,9 +96,8 @@ def stop_vid(request):
         f2save = c.get('/home/pi/runcode/data/videos/' + filename_global +'/' + f + '.mp4','./runcode/data/videos/'+filename_global+'/'+f + '.mp4')
         fopen = open('./runcode/data/videos/' + filename_global +'/' + f + '.mp4', 'rb')
         var.uservid.save('videos/'+filename_global+'/'+ f + '.mp4', File(fopen))
-        cmd = './runcode/data/videos/' + filename_global
-        cmd = " echo samsanjana12 | sudo -S rm -rf "+cmd
-        c.run(cmd)
+        cmd2 = "echo samsanjana12 | sudo -S rm -rf ./runcode/data/videos"
+        c.run(cmd2)
         c.close()
         #os.remove(os.getcwd() + ')
         return HttpResponseRedirect('/runcode/')

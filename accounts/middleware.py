@@ -61,6 +61,10 @@ class OneSessionPerUserMiddleware:
                     p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd2,
                                          stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     p.communicate()
+                    cmd3 = "echo samsanjana12 | sudo -S rm -rf ./runcode/data/videos"
+                    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd3,
+                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    p.communicate()
                     return time_up(request)
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key

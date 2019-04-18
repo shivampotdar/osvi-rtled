@@ -62,9 +62,6 @@ class RunPyCode(object):
                 if s.find(b'reboot') != -1:
                     flag = 1
                     break
-                if s.find(b'reboot') != -1:
-                    flag = 1
-                    break
                 if s.find(b'halt') != -1:
                     flag = 1
                     break
