@@ -23,7 +23,7 @@ class OneSessionPerUserMiddleware:
                 print("here")
                 obj = LoggedInUser.objects.exclude(user_id=request.user.id)
                 for i in obj:
-                    if (timezone.now()-i.user.last_login).seconds > t_out:
+                    if (timezone.now()-i.user.last_login).seconds > t_out and not i.user.is_staff:
                         user=User.objects.get(pk=i.user_id)
                         [s.delete() for s in Session.objects.all() if str(s.get_decoded().get('_auth_user_id')) == str(user.id)]
                         i.delete()
