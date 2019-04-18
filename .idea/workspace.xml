@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520831f2-30b9-47bf-a636-31983268d994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/runcode/templates/runcode/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/runcode/templates/runcode/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="160" column="328" selection-start-line="160" selection-start-column="328" selection-end-line="160" selection-end-column="328" />
+            <state relative-caret-position="246">
+              <caret line="163" column="304" lean-forward="true" selection-start-line="163" selection-start-column="304" selection-end-line="163" selection-end-column="304" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -122,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="83" column="320" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="320" />
+            <state relative-caret-position="182">
+              <caret line="83" column="196" selection-start-line="83" selection-start-column="196" selection-end-line="83" selection-end-column="196" />
             </state>
           </provider>
         </entry>
@@ -172,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>var/lib</find>
       <find>filename</find>
       <find>PycodeTa</find>
       <find>debug</find>
@@ -202,6 +200,7 @@
       <find>team</find>
       <find>csd</find>
       <find>osvi-rt</find>
+      <find>osvi</find>
     </findStrings>
     <replaceStrings>
       <replace>runcode</replace>
@@ -267,8 +266,8 @@
         <option value="$PROJECT_DIR$/accounts/middleware.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/templates/team.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/runcode/templates/runcode/base.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -403,7 +402,7 @@
       <workItem from="1555160442823" duration="5269000" />
       <workItem from="1555221064580" duration="20499000" />
       <workItem from="1555339444846" duration="5858000" />
-      <workItem from="1555388151359" duration="13574000" />
+      <workItem from="1555388151359" duration="13963000" />
     </task>
     <task id="LOCAL-00001" summary="Added testing case (/running/answers.py)&#10;Little changes in frontend">
       <created>1551768907613</created>
@@ -416,7 +415,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204155000" />
+    <option name="totallyTimeSpent" value="204544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -833,17 +832,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="83" column="320" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="320" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runcode/templates/runcode/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="160" column="328" selection-start-line="160" selection-start-column="328" selection-end-line="160" selection-end-column="328" />
+        <state relative-caret-position="246">
+          <caret line="163" column="304" lean-forward="true" selection-start-line="163" selection-start-column="304" selection-end-line="163" selection-end-column="304" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -852,6 +844,13 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="83" column="196" selection-start-line="83" selection-start-column="196" selection-end-line="83" selection-end-column="196" />
         </state>
       </provider>
     </entry>
