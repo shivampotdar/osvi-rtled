@@ -14,14 +14,21 @@
 </div>
 
 <h3 class="" style="margin-top: 24px;">Faculty</h3>
+<div style="
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+align-items: center;
+justify-content: center;">
+<div class="row center-align">
+		<div class="col s12 m6">
+			<div class="card center">
+				<div class="card-image center-align">
+					<img src="{% static 'images/faculty.jpg' %}" height="200" style="min-width: 170px;width: 200px;border-radius: 50%;padding: 20px;margin: 0 auto;">
+				</div>
 
-<div class="row">
-    <div class="col s12 m6">
-	<div class="card horizontal">
-		<div class="card-image">
-			<img src="{% static 'images/faculty.jpg' %}" height="200" style="min-width: 170px;width: 170px;">
-		</div>
-		<div class="card-stacked">
 			<div class="card-content" style="padding:10px;margin-bottom: 0px;">
 				<p>
 					<h5 style="padding-top:0px;">Dr Pruthviraj U</h5>
@@ -37,15 +44,15 @@
                     <a href="https://www.instagram.com/dr.pruthviraj.u/?hl=en" class="fa fa-instagram blue-text text-darken-3" style="font-size:23px;padding: 5px;"></a>
 				</p>
 			</div>
-		</div>
+
 	</div>
     </div>
-    <div class="col s12 m6">
-			<div class="card horizontal">
-				<div class="card-image">
-					<img src="{% static 'images/kvg.jpg' %}" height="200" style="min-width: 170px;width: 170px;">
+		<div class="col s12 m6">
+			<div class="card center">
+				<div class="card-image center-align">
+					<img src="{% static 'images/kvg.jpg' %}" height="200" style="min-width: 170px;width: 200px;border-radius: 50%;padding: 20px;margin: 0 auto;">
 				</div>
-				<div class="card-stacked">
+
 					<div class="card-content" style="padding:10px;margin-bottom: 0px;">
 						<p>
 							<h5 style="padding-top:0px;">Dr K V Gangadharan</h5>
@@ -60,21 +67,38 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
 </div>
+</div>
+<!--
+<div class="col s12 m3">
+    <div class="card center">
+        <div class="card-image center-align">
+            <img src="{% static 'images/vanshika.jpeg' %}" class="center-align" height="200" style="min-width: 150px;border-radius:50%;width: 190px;padding:20px;margin: 0 auto;">
+        </div>
+        <div class="card-content">
+        <p>
+        <h5 style="padding-top:0px;">Vanshika Gupta</h5>B.Tech 3rd year <br> Civil Engineering, NITK</p><br>
+            <p>
+            <a href="https://github.com/vansjyo" class="fa fa-github grey-text text-darken-4" style="font-size:23px;padding: 5px;"></a>
+            <a href="#" class="fa fa-google red-text text-darken-4" style="font-size:23px;padding: 5px;"></a>
+            <a href="#" class="fa fa-linkedin blue-text text-darken-3" style="font-size:23px;padding: 5px;"></a>
+            </p>
+        </div>
+    </div>
+</div>
+-->
 
 <h3 class="" style="margin-top: 24px;">Team Members</h3>
     <h6>( Under the course AM477, Dec 2018 - Apr 2019 )</h6><br>
     <div class="">
 	<div class="row">
 
-		<div class="col s12 m6">
-			<div class="card horizontal">
-				<div class="card-image">
-					<img src="{% static 'images/vanshika.jpeg' %}" height="200" style="min-width: 170px;width: 170px;">
+		<div class="col s12 m3">
+			<div class="card center">
+				<div class="card-image center-align">
+					<img src="{% static 'images/vanshika.jpeg' %}" height="200" style="min-width: 170px;width: 200px;border-radius: 50%;padding: 20px;margin: 0 auto;">
 				</div>
-				<div class="card-stacked">
+
 					<div class="card-content" style="padding:10px;margin-bottom: 0px;">
 						<p>
 							<h5 style="padding-top:0px;">Vanshika Gupta</h5>
@@ -86,16 +110,16 @@
 							<a href="https://www.linkedin.com/in/vanshika-gupta-553085170" class="fa fa-linkedin blue-text text-darken-3" style="font-size:23px;padding: 5px;"></a>
 						</p> 
 					</div>
-				</div>
+
 			</div>
 		</div>
 
-		<div class="col s12 m6">
-			<div class="card horizontal">
-				<div class="card-image">
-					<img src="{% static 'images/shivam.jpeg' %}" height="200" style="min-width: 170px;width: 170px;">
+		<div class="col s12 m3">
+			<div class="card center">
+				<div class="card-image center-align">
+					<img src="{% static 'images/shivam.jpeg' %}" height="200" style="min-width: 170px;width: 200px;border-radius: 50%;padding: 20px;margin: 0 auto;">
 				</div>
-				<div class="card-stacked">
+
 					<div class="card-content" style="padding:10px;margin-bottom: 0px;">
 						<p>
 							<h5 style="padding-top:0px;">Shivam Mahesh Potdar</h5>
@@ -108,18 +132,17 @@
                             <a href="https://www.facebook.com/shivampotdar99" class="fa fa-facebook blue-text text-darken-3" style="font-size:23px;padding: 5px;"></a>
 						</p> 
 					</div>
-				</div>
+
 			</div>
 		</div>
 
-	</div>
-	<div class="row">
-        <div class="col s12 m6">
-			<div class="card horizontal">
-				<div class="card-image">
-					<img src="{% static 'images/ashwin.jpeg' %}" height="200" style="min-width: 170px;width: 170px;">
+		<div class="col s12 m3">
+			<div class="card center">
+				<div class="card-image center-align">
+					<img src="{% static 'images/ashwin.jpeg' %}" height="200" style="min-width: 170px;width: 200px;border-radius: 50%;padding: 20px;margin: 0 auto;">
 				</div>
-				<div class="card-stacked">
+
+
 					<div class="card-content" style="padding:10px;margin-bottom: 0px;">
 						<p>
 							<h5 style="padding-top:0px;">Ashwinkumar Kupsad</h5>
@@ -132,15 +155,15 @@
 						</p> 
 					</div>
 				</div>
-			</div>
+
 		</div>
 
-		<div class="col s12 m6">
-			<div class="card horizontal">
-				<div class="card-image">
-					<img src="{% static 'images/rahul.jpeg' %}" height="200" style="min-width: 170px;width: 170px;">
+		<div class="col s12 m3">
+			<div class="card center">
+				<div class="card-image center-align">
+					<img src="{% static 'images/rahul.jpeg' %}" height="200" style="min-width: 170px;width: 200px;border-radius: 50%;padding: 20px;margin: 0 auto;">
 				</div>
-				<div class="card-stacked">
+
 					<div class="card-content" style="padding:10px;margin-bottom: 0px;">
 						<p>
 							<h5 style="padding-top:0px;">Rahul Das</h5>
@@ -152,11 +175,11 @@
 							<a href="#" class="fa fa-linkedin blue-text text-darken-3" style="font-size:23px;padding: 5px;"></a> 
 						</p> 
 					</div>
-				</div>
+
 			</div>
 		</div>
 
 	</div>
-</div>
+    	</div>
 
 {% endblock %}

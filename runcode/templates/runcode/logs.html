@@ -131,8 +131,7 @@
 		$(window).resize(function () {
 			if (window.innerWidth < 800) {
 				originalContent = $('#head_osvi').innerHTML;
-				$('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"> OSVI-RT </a>');
-
+				$('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><span style="vertical-align: top;font-size: 22px;"> OSVI-RT </span></a><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px; float:right;">');
 			} else if (window.innerWidth > 800) {
 				$('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Trigger</span></a>');
 			}
@@ -144,7 +143,7 @@
 		});
 	</script>
 	</html>
-<!-- 
+<!--
 <!doctype html>
 <html>
 <head>
