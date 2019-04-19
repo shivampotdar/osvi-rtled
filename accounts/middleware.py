@@ -20,10 +20,11 @@ class OneSessionPerUserMiddleware:
         print(LoggedInUser.objects.count())
         if request.user.is_authenticated:
             if LoggedInUser.objects.count() > 1:
-                print("here")
+                #print("here")
                 obj = LoggedInUser.objects.exclude(user_id=request.user.id)
                 for i in obj:
-                    if (timezone.now()-i.user.last_login).seconds > t_out and not i.user.is_staff:
+                    if ((timezone.now()-i.user.last_login).seconds > t_out and not i.user.is_staff) or (i.user.is_staff and (timezone.now()-i.user.last_login).seconds > 3*t_out):
+                        #if i.user.is_staff and (timezone.now()-i.user.last_login).seconds > 3*t_out
                         user=User.objects.get(pk=i.user_id)
                         [s.delete() for s in Session.objects.all() if str(s.get_decoded().get('_auth_user_id')) == str(user.id)]
                         i.delete()
