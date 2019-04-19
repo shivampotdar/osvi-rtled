@@ -20,7 +20,7 @@
 		<div class="nav-wrapper">
 			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">
                           <img src="{% static 'images/logoCSD.jpeg' %}" style="height: 65px;">
-                          <span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Trigger</span>
+                          <span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span>
                         </a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -111,7 +111,7 @@
 	<footer class="page-footer" style="background-color:#263238  !important;padding: 0px;">
 		<div class="footer-copyright">
 			<div class="container">
-				@Sponsored by CSD NITK 
+				@Supported by CSD NITK
 				<a class="grey-text text-lighten-4 right" href="{% url 'team' %}">Team</a>
 			</div>
 		</div>
@@ -128,14 +128,15 @@
 		});
 	</script>
 	<script type="text/javascript">
+		    var resizeTimer = undefined;
 		$(window).resize(function () {
-			if (window.innerWidth < 800) {
-				originalContent = $('#head_osvi').innerHTML;
-				$('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><span style="vertical-align: top;font-size: 22px;"> OSVI-RT </span></a><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px; float:right;">');
-			} else if (window.innerWidth > 800) {
-				$('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Trigger</span></a>');
-			}
-		}).resize();
+		    clearTimeout(resizeTimer);
+            if (window.innerWidth < 800) {
+            resizeTimer= setTimeout(function(){$('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><span style="vertical-align: top;font-size: 22px;"> OSVI-RCT </span></a><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px; float:right;">');},700);
+            } else if (window.innerWidth > 800) {
+            resizeTimer= setTimeout(function(){$('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');},700);
+            }
+    }).resize();
 	</script>
 	<script>
 		$(document).ready(function(){

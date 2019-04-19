@@ -13,23 +13,23 @@
   <link rel="stylesheet" href="{% static 'css/runcode.css' %}">
 </head>
 
-<body class="home">
+<body>
 
   <nav class="nav-extended" style="background-color:#263238  !important;">
 		<div class="nav-wrapper">
 			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">
-                          <img src="https://image-store.slidesharecdn.com/c98fc7bb-2ec8-42b1-8666-51e7d7b303cb-original.jpeg" style="height: 60px;width: 70px;">
-                          <span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Trigger</span>
+                          <img src="{% static 'images/logoCSD.jpeg' %}" style="height: 65px;">
+                          <span style="vertical-align: middle;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span>
                         </a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				{% if user.is_authenticated %}
-				<li><a class="btn blue-grey darken-4" href="{% url 'code_home' %}">Code Testing</a></li>
-				<li><a class="btn blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
-				<li><a class="btn blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
+				    <li><a class="btn blue-grey darken-4" href="{% url 'code_home' %}">Code Testing</a></li>
+				    <li><a class="btn blue-grey darken-4" href="{% url 'logs' %}">User Logs</a></li>
+				    <li><a class="btn blue-grey darken-4" href="{% url 'logout' %}">Logout</a></li>
 				{% else %}
-		                <li><a class="btn blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
-		                <li><a class="btn blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
+		            <li><a class="btn blue-grey darken-4" href="{% url 'login' %}">Log In</a></li>
+		            <li><a class="btn blue-grey darken-4" href="{% url 'signup' %}">Sign Up</a></li>
 				{% endif %}
 			</ul>
 		</div>
@@ -78,13 +78,14 @@
     });
   </script>
   <script type="text/javascript">
-    $(window).resize(function () {
-      if (window.innerWidth < 800) {
-        originalContent = $('#head_osvi').innerHTML;
-        $('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><span style="vertical-align: top;font-size: 22px;"> OSVI-RCT </span></a><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px; float:right;">');
-      } else if (window.innerWidth > 800) {
-        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');
-      }
+        var resizeTimer = undefined;
+		$(window).resize(function () {
+		    clearTimeout(resizeTimer);
+            if (window.innerWidth < 800) {
+            resizeTimer= setTimeout(function(){$('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><span style="vertical-align: top;font-size: 22px;"> OSVI-RCT </span></a><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px; float:right;">');},700);
+            } else if (window.innerWidth > 800) {
+            resizeTimer= setTimeout(function(){$('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');},700);
+            }
     }).resize();
   </script>
   <script>
