@@ -156,7 +156,7 @@
         $(window).resize(function () {
       if (window.innerWidth < 800) {
         originalContent = $('#head_osvi').innerHTML;
-        $('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;">OSVI-RCT<img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
+        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;">OSVI-RCT<img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
 
       } else if (window.innerWidth > 800) {
         $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img class="left" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');
