@@ -108,7 +108,6 @@ $('#runcode').click(function(){
     start_vid();
 });
 */
- */
 /*
 $('#runcode').on('submit', function(event){
     event.preventDefault();
