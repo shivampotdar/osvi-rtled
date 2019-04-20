@@ -153,14 +153,14 @@
 		});
 	</script>
 	<script type="text/javascript">
-        var resizeTimer = undefined;
-		$(window).resize(function () {
-		    clearTimeout(resizeTimer);
-            if (window.innerWidth < 800) {
-            resizeTimer= setTimeout(function(){$('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><span style="vertical-align: top;font-size: 22px;"> OSVI-RCT </span></a><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px; float:right;">');},700);
-            } else if (window.innerWidth > 800) {
-            resizeTimer= setTimeout(function(){$('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');},700);
-            }
+        $(window).resize(function () {
+      if (window.innerWidth < 800) {
+        originalContent = $('#head_osvi').innerHTML;
+        $('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;"> OSVI-RT <img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
+
+      } else if (window.innerWidth > 800) {
+        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Trigger</span></a>');
+      }
     }).resize();
 	</script>
 	{% if target == "runpy" %}
