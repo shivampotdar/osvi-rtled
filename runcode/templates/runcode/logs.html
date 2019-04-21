@@ -19,8 +19,8 @@
 	<nav class="nav-extended" style="background-color:#263238  !important;">
 		<div class="nav-wrapper">
 			<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5">
-                          <img src="{% static 'images/logoCSD.jpeg' %}" style="height: 65px;">
-                          <span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span>
+                          <img class="left" src="{% static 'images/logoCSD.jpeg' %}" style="height: 65px;">
+                          <span style="font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span>
                         </a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -34,7 +34,6 @@
 				{% endif %}
 			</ul>
 		</div>
-		<div class="divider"></div>
 	</nav>
 	<ul class="sidenav" id="mobile-demo">
 		<li><a class="btn blue-grey darken-4" href="{% url 'home' %}">Home</a></li>
@@ -54,7 +53,7 @@
 		<div class="row" style="margin-top:30px;">
 			<!-- ************  CODING ZONE  ************ -->
 			<div class="col s12 center">
-				<table class="responsive">
+				<table class="responsive-table">
 					<tr>
 						<!--<th>Session ID</th>-->
 						<th>Logs</th>
@@ -64,7 +63,7 @@
 					<tr>
 						<!--<td>{{u_id}}</td>-->
 						<td style="vertical-align: top;">
-							<table class="responsive">
+							<table class="responsive-table">
 								<tr>
 									<th>Author</th>
 									<th>Time Saved</th>
@@ -83,7 +82,7 @@
 							</table>
 						</td>
 						<td style="vertical-align: top;">
-							<table class="responsive">
+							<table class="responsive-table">
 								<tr>
 									<th>Author</th>
 									<th>Post Date</th>
@@ -131,10 +130,10 @@
 	$(window).resize(function () {
       if (window.innerWidth < 800) {
         originalContent = $('#head_osvi').innerHTML;
-        $('#head_osvi').replaceWith('<a href="#" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;"> OSVI-RCT <img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
+        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;"> OSVI-RCT <img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
 
       } else if (window.innerWidth > 800) {
-        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="vertical-align: top;font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');
+        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img class="left" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');
       }
     }).resize();
 	</script>
