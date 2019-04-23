@@ -79,7 +79,7 @@ function start_vid() {
         type: "POST",
         }
     ).delay
-    sleep(1500);
+    sleep(3000);
     $('#iframe1').attr( 'src', function ( i, val ) { return val; });
 };
 
@@ -97,7 +97,7 @@ function stop_vid() {
         type: "POST",
         }
     )
-    sleep(1500);
+    sleep(3000);
     $('#iframe1').attr( 'src', function ( i, val ) { return val; });
     document.location.reload(1)
 };
@@ -108,6 +108,7 @@ $('#runcode').click(function(){
     start_vid();
 });
 */
+*/
 /*
 $('#runcode').on('submit', function(event){
     event.preventDefault();
@@ -116,7 +117,6 @@ $('#runcode').on('submit', function(event){
     console.log(a)
 //    runcode();
 });
-
 function runcode() {
     console.log("create post is working!") // sanity check
     var a = '{{code}}'
@@ -127,6 +127,5 @@ function runcode() {
         data: {code : $('#runcode').val()}
         },
     );
-
 };
 */
