@@ -3,9 +3,10 @@ from django.contrib.sessions.models import Session
 from .models import LoggedInUser
 from .views import single_user, time_up
 from django.utils import timezone
-from mysite.settings import t_out, pi_ip
+from mysite.settings import t_out
 from django.contrib.auth.models import User
-import subprocess
+from runcode.runcodefuncs import kill_stop_clear
+
 
 
 class OneSessionPerUserMiddleware:
@@ -20,11 +21,9 @@ class OneSessionPerUserMiddleware:
         print(LoggedInUser.objects.count())
         if request.user.is_authenticated:
             if LoggedInUser.objects.count() > 1:
-                #print("here")
                 obj = LoggedInUser.objects.exclude(user_id=request.user.id)
                 for i in obj:
                     if ((timezone.now()-i.user.last_login).seconds > t_out and not i.user.is_staff) or (i.user.is_staff and (timezone.now()-i.user.last_login).seconds > 3*t_out):
-                        #if i.user.is_staff and (timezone.now()-i.user.last_login).seconds > 3*t_out
                         user=User.objects.get(pk=i.user_id)
                         [s.delete() for s in Session.objects.all() if str(s.get_decoded().get('_auth_user_id')) == str(user.id)]
                         i.delete()
@@ -36,18 +35,7 @@ class OneSessionPerUserMiddleware:
                 if request.user.is_staff or request.user.is_superuser:
                     pass
                 else:
-                    cmd = " sudo pkill motion"
-                    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd,
-                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-                    p.communicate()
-                    cmd2 = " python3 /home/pi/runcode/stopit.py"
-                    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd2,
-                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-                    p.communicate()
-                    cmd3 = "echo samsanjana12 | sudo -S rm -rf ./runcode/data/videos"
-                    p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@" + pi_ip + cmd3,
-                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-                    p.communicate()
+                    kill_stop_clear()
                     return time_up(request)
             # if there is a stored_session_key  in our database and it is
             # different from the current session, delete the stored_session_key

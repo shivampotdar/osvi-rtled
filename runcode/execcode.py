@@ -1,9 +1,8 @@
 import subprocess
-import sys
 import os
 import mmap
 from fabric import Connection
-from mysite.settings import pi_ip
+from mysite.settings import pi_ip, pi_pwd
 
 class RunPyCode(object):
     
@@ -13,7 +12,7 @@ class RunPyCode(object):
             os.mkdir('./runcode/running')
 
     def _run_py_prog(self, cmd="./osvi/a.py"):
-        p = subprocess.Popen("sshpass -p samsanjana12 ssh -p22 pi@"+pi_ip+" python3 "+cmd,
+        p = subprocess.Popen("sshpass -p "+pi_pwd+" ssh -p22 pi@"+pi_ip+" python3 "+cmd,
                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         try:
             result = p.wait(timeout=20)
@@ -31,7 +30,7 @@ class RunPyCode(object):
             code = self.code
         with open(filename, "w") as f:
             f.write(code)
-        c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': 'samsanjana12'})
+        c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd})
         c.put("./runcode/running/a.py",'./runcode/running/a.py')
         c.close()
         self.test_py_code(filename)
