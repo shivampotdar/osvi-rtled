@@ -13,5 +13,9 @@
 #### Author
 ##### Shivam Mahesh Potdar, NITK
 shivampotdar99@gmail.com
+github.com/shivampotdar
+
+#### Vanshika Gupta, NITK
+github.com/vansjyo
 
 
