@@ -1,6 +1,6 @@
 # osvi-rtled
 
-##Usage Instructions
+## Usage Instructions
 
 1. Install Django latest version, ```pip3 install django```
 2. ```source myvenv bin activate```
@@ -10,8 +10,8 @@
 6. Add your password and pi IP in ```mysite/settings.py```
 
 
-####Author
-#####Shivam Mahesh Potdar, NITK
+#### Author
+##### Shivam Mahesh Potdar, NITK
 shivampotdar99@gmail.com
 
 
