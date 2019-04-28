@@ -138,7 +138,7 @@ MEDIA_URL = '/media/'
 
 t_out = 300
 
-pi_ip = '10.100.82.252'
-pi_pwd = 'raspberry'
+pi_ip = '10.100.82.225'
+pi_pwd = 'rpi'
 
 # logout after time_up
