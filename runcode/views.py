@@ -66,7 +66,7 @@ def start_vid(request):
                 item = 'movie_filename '+f+'\n'
                 print(item)
             fout.write(item)
-    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd})
+    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd}, connect_timeout = 10)
     c.put('./runcode/motion_new.conf','runcode/motion_new.conf')
     cmd = " echo "+pi_pwd+" | sudo -S motion -b -c /runcode/motion_new.conf"
     c.run(cmd)
@@ -81,7 +81,7 @@ def stop_vid(request):
     print('a=', a)
     sleep(10)
     cmd = " sudo pkill motion"
-    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd})
+    c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd}, connect_timeout = 10)
     c.run(cmd)
     if a == 1:
         var = UserVids(author=request.user, postdate=timezone.now(),session=request.user.logged_in_user.session_key)

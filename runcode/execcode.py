@@ -30,7 +30,7 @@ class RunPyCode(object):
             code = self.code
         with open(filename, "w") as f:
             f.write(code)
-        c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd})
+        c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd}, connect_timeout = 10)
         c.put("./runcode/running/a.py",'./runcode/running/a.py')
         c.close()
         self.test_py_code(filename)
