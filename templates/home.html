@@ -6,7 +6,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class="card" style="padding:20px;">
-  <h4 class="center">Hi {{ user.username }}! Welcome to OSVI-RemoteCodeTest</h4>
+  <h4 class="center">Hi {{ user.username }}!<br> Welcome to the demo of Remotely Accessible Hardware Interface (RAHI) Lab</h4>
   <div class="row">
       <a href = "/runcode/" class="btn-large blue-grey darken-4">Code Testing</a>
   </div>
@@ -22,6 +22,7 @@
 </div>
 {% else %}
 <div class="card" style="padding:20px;">
+  <h3 class="center"> Welcome to the live demo of<br>RAHI Lab for FICTA 2020 :)</h3>
   <h4 class="center">You are not logged in</h4>
   <div class="row">
       <a class="btn-large blue-grey darken-4" href="{% url 'login' %}">login</a>

@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>{% block title %}OSVI-RT LED{% endblock %}</title>
+  <title>{% block title %}RAHI Lab{% endblock %}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -81,10 +81,10 @@
       $(window).resize(function () {
       if (window.innerWidth < 800) {
         originalContent = $('#head_osvi').innerHTML;
-        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;"> OSVI-RCT <img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
+        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="blue-grey-text text-lighten-5" style="font-size: 22px;"> RAHI Lab <img class="right" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"> </a>');
 
       } else if (window.innerWidth > 800) {
-        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img class="left" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="font-size: 22px;"> Open Source Virtual Instrumentation-Remote Code Testing</span></a>');
+        $('#head_osvi').replaceWith('<a href="/" id="head_osvi" class="brand-logo blue-grey-text text-lighten-5"><img class="left" src="{% static 'images/logoCSD.jpeg' %}" style="height:65px;"><span style="font-size: 22px;"> Remotely Accessible Hardware Interface (RAHI) Lab - FICTA 2020</span></a>');
       }
     }).resize();
   </script>
