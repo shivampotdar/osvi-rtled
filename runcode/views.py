@@ -68,7 +68,7 @@ def start_vid(request):
             fout.write(item)
     c = Connection(host=pi_ip, user='pi', connect_kwargs={'password': pi_pwd}, connect_timeout = 10)
     c.put('./runcode/motion_new.conf','runcode/motion_new.conf')
-    cmd = " echo "+pi_pwd+" | sudo -S motion -b -c /runcode/motion_new.conf"
+    cmd = " echo "+pi_pwd+" | sudo -S motion -b -c ./runcode/motion_new.conf"
     c.run(cmd)
     global a
     a = 1
