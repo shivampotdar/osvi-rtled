@@ -102,11 +102,6 @@ function stop_vid() {
     document.location.reload(1)
 };
 
-
-$('#runcode').click(function(){
-    console.log("Hello");
-    start_vid();
-});
 /*
 $('#runcode').on('submit', function(event){
     event.preventDefault();
@@ -115,7 +110,8 @@ $('#runcode').on('submit', function(event){
     console.log(a)
 //    runcode();
 });
-
+*/
+/*
 function runcode() {
     console.log("create post is working!") // sanity check
     var a = '{{code}}'
